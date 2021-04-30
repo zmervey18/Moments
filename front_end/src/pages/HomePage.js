@@ -16,7 +16,7 @@ import Register from './Register'
 Modal.setAppElement('#root')
 
 const HomePage = () => {
-const [modalIsOpen,setModalIsOpen]=useState(false)
+const [registrationModelIsOpen,setRegistrationModalIsOpen]=useState(false)
     return (
         <div>
             <Header />
@@ -37,14 +37,16 @@ const [modalIsOpen,setModalIsOpen]=useState(false)
                 <Button 
                 buttonStyle="btn--red" 
                 text= "Get Journalling" 
-                event= {() => setModalIsOpen(true)}
+                event= {() => setRegistrationModalIsOpen(true)}
                 />
             </div>
 
-            <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
-                <Register />
+            <Modal isOpen={registrationModelIsOpen} onRequestClose={() => setRegistrationModalIsOpen(false)}>
+                <Register 
+                modalOpen = {registrationModalIsOpen}
+                />
                 <div>
-                    <button onClick={() => setModalIsOpen(false)}>
+                    <button onClick={() => setRegistrationModalIsOpen(false)}>
                         Close
                     </button>
                 </div>

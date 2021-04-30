@@ -1,9 +1,9 @@
-import React from 'react'
-
+import Button from '../components/Button/Button'
 
 const Register = () => {
 
     return (
+        
         <div>
             <form>
                 <div>
@@ -29,8 +29,13 @@ const Register = () => {
                         placeholder="Password"
                     ></input>
                 </div>
-
-                <input type="submit" value="Register"></input>
+                <Button 
+                buttonStyle="btn--red" 
+                type="submit"
+                text= "Register" 
+                value="Register"
+                />
+                
             </form>
         </div>
     )

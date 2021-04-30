@@ -7,8 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Fredoka+One&family=Roboto&display=swap');
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
