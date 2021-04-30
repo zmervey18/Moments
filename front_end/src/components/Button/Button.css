@@ -9,7 +9,7 @@
 }
 
 .btn {
-  font-weight: 400;
+  font-weight: 600;
   border-radius: 4px;
   cursor: pointer;
   transition: transform 0.2s ease;
@@ -28,6 +28,7 @@
   color: var(--darkblue);
   border: 2px solid var(--powderblue);
   font-family: "Caveat", cursive;
+  
 }
 
 .btn-blue:hover {

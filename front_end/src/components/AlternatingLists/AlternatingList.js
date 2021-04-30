@@ -17,7 +17,7 @@ const AlternatingList = () => {
                 />
                 <BenefitListItem
                 image={journal}
-                subtitle="Journaling reduces your stress and anxiety."
+                subtitle="Journaling reduces stress and anxiety."
                 alt="Woman facing a big journal"
                 textClass="TextContainerLeft"
                 />

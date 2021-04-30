@@ -33,7 +33,7 @@ const FeatureList = () => {
                 <FeatureListCard
                 image={mobile_icon}
                 title="Portable"
-                subtitle="View your journal from any device"
+                subtitle="View your journal on any device"
                 alt="mobile"
                 />
             </div>

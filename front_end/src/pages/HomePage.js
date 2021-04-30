@@ -1,3 +1,7 @@
+import React, { useState } from 'react'
+import Modal from 'react-modal'
+
+
 import Header from '../components/Header/Header'
 import ImageTile from '../components/Image/ImageTile'
 import ideas from '../static/ideas.svg'
@@ -8,8 +12,11 @@ import FeatureList from '../components/FeaturesList/FeatureList'
 import Button from '../components/Button/Button'
 import Footer from '../components/Footer/Footer'
 
+import Register from './Register'
+Modal.setAppElement('#root')
 
 const HomePage = () => {
+const [modalIsOpen,setModalIsOpen]=useState(false)
     return (
         <div>
             <Header />
@@ -30,9 +37,21 @@ const HomePage = () => {
                 <Button 
                 buttonStyle="btn--red" 
                 text= "Get Journalling" 
+                event= {() => setModalIsOpen(true)}
                 />
             </div>
+
+            <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
+                <Register />
+                <div>
+                    <button onClick={() => setModalIsOpen(false)}>
+                        Close
+                    </button>
+                </div>
+            </Modal>
+
             <Footer /> 
+
         </div>
     )
 }

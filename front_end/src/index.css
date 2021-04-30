@@ -7,16 +7,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-@font-face {
-  font-family: "Caveat";
-  src: url("https://fonts.googleapis.com/css2?family=Caveat&display=swap")
-    format("truetype");
 }
 
 .tester {

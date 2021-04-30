@@ -1,12 +1,12 @@
 import './BenefitListItem.css'
 
-const BenefitListItem = ({image, subtitle, alt, className, textClass}) => {
+const BenefitListItem = ({image, subtitle, alt, textClass}) => {
     return (
         <div className="BenefitListCard">
             <img 
             src={image} 
             alt={alt}
-            className={`${className} BenefitListImage`}
+            className="BenefitListImage"
             >
             </img>
             <div className={textClass}>

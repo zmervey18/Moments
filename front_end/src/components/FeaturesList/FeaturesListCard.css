@@ -1,6 +1,6 @@
 .FeatureListVerticalContainer {
     max-width: 1000px;
-    max-height:600px;
+    max-height:1200px;
     align-self: center;
     /* background-color:blue; */
     padding: 10px;
@@ -21,6 +21,7 @@
     min-width: 300px;
     max-width: 400px;
     text-align: center;
+    
 }
 
 .FeatureListImage {
@@ -28,4 +29,14 @@
     width: 100px;
     margin: auto;
     display: block;
+}
+
+.FeatureListCard > h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 30px;
+}
+
+.FeatureListCard > h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
 }
