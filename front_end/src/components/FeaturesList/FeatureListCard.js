@@ -1,7 +1,9 @@
+import './FeaturesListCard.css'
 const FeatureListCard = ({image, title, subtitle, alt}) => {
     return (
-        <div>
+        <div className="FeatureListCard">
             <img 
+            className="FeatureListImage"
             src={image} 
             alt={alt}>
             </img>

@@ -2,13 +2,13 @@ import './ImageTile.css'
 
 const ImageTile = ({image, title, alt}) => {
     return (
-        <div className='center'>
+        <div className='center imageContainer'>
             <img 
             className='imageTile'
             src={image} 
             alt={alt}>
             </img>
-            <h4>{title}</h4>
+            <h4 className="text">{title}</h4>
         </div>
     )
 }

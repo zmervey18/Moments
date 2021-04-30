@@ -1,0 +1,31 @@
+.FeatureListVerticalContainer {
+    max-width: 1000px;
+    max-height:600px;
+    align-self: center;
+    /* background-color:blue; */
+    padding: 10px;
+    margin: auto;
+}
+
+.FeatureListContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 2rem 4rem;
+    text-align: center;
+}
+
+.FeatureListCard {
+    padding: 60px 20px;
+    align-items: center;
+    min-width: 300px;
+    max-width: 400px;
+    text-align: center;
+}
+
+.FeatureListImage {
+    height: 50px;
+    width: 100px;
+    margin: auto;
+    display: block;
+}

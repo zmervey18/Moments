@@ -1,12 +1,16 @@
 .imageTile {
+  display: flex;
   max-height: 300px;
+  max-width: 500px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+  margin: auto;
   padding-top: 50px;
 }
 
-.center {
+.imageContainer {
+  max-height: 600px;
+  max-width: 500px;
+  margin: auto;
+  padding: 50px 50px;
   text-align: center;
 }

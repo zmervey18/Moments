@@ -1,14 +1,17 @@
-import React from 'react'
+import './BenefitListItem.css'
 
-
-const BenefitListItem = ({image, subtitle, alt}) => {
+const BenefitListItem = ({image, subtitle, alt, className, textClass}) => {
     return (
-        <div>
+        <div className="BenefitListCard">
             <img 
             src={image} 
-            alt={alt}>
+            alt={alt}
+            className={`${className} BenefitListImage`}
+            >
             </img>
+            <div className={textClass}>
             <h3>{subtitle}</h3>
+            </div>
         </div>
     )
 }
