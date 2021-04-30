@@ -1,30 +1,22 @@
-import logo from ''
-
+import logo from './../../static/logo_with_text.svg'
+import { Link } from 'react-router-dom'
+import Button from './../Button/Button'
+import './navbar.css'
 const unauthNavbar = () => {
     return (
         <nav className="navBar">
             <Link to='/'><img className='logo left' src={logo} alt="Moments Logo"></img></Link>
             <div className="buttonsContainer">
-                <Link to='/'>
+                <Link to='/sign_up'>
                     <Button 
-                        buttonStyle="btn--white" 
-                        text= "Home" 
-                        className="right" 
-                    /> 
-                </Link>
-                <Link to='/'>
-                    <Button 
-                        buttonStyle="btn--white" 
-                        text= "Deck" 
-                        className="right" 
+                        buttonStyle="btn--blue" 
+                        text= "Sign Up" 
                     /> 
                 </Link> 
-                <Link to='/'>   
+                <Link to='/login'>   
                     <Button 
-                        buttonStyle="btn--white" 
-                        text= "Study Now" 
-                        className="right"
-                        
+                        buttonStyle="btn--blue" 
+                        text= "Login" 
                     /> 
                 </Link>  
             </div>

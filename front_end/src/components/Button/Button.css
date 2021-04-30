@@ -1,10 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
+
 :root {
-  --blue: #5b9bd5ff;
+  --blue: #457b9d;
   --red: #e63946;
+  --white: #ffffff;
+  --darkblue: #1d3557;
+  --powderblue: #a8dadc;
 }
 
 .btn {
-  font-family: "Roboto", sans-serif;
   font-weight: 400;
   border-radius: 4px;
   cursor: pointer;
@@ -20,17 +24,30 @@
 }
 
 .btn--blue {
-  background-color: var(--blue);
-  color: var(--white);
-  border: 2px solid var(--blue);
+  background-color: var(--powderblue);
+  color: var(--darkblue);
+  border: 2px solid var(--powderblue);
+  font-family: "Caveat", cursive;
 }
 
 .btn-blue:hover {
-  background-color: var(--white);
+  background-color: var(--powderblue);
   color: var(--blue);
-  border: 2px solid var(--blue);
+  border: 2px solid var(--powderblue);
 }
 
+.btn--red {
+  background-color: var(--red);
+  color: var(--white);
+  border: 2px solid var(--red);
+  color: white;
+}
+
+.btn-red:hover {
+  background-color: var(--white);
+  color: var(--red);
+  border: 2px solid var(--red);
+}
 .btn--medium {
   padding: 10px 20px;
   font-size: 18px;
