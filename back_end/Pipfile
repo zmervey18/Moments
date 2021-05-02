@@ -8,6 +8,7 @@ django = "*"
 pillow = "*"
 djangorestframework = "*"
 django-cleanup = "*"
+django-rest-knox = "*"
 
 [dev-packages]
 
