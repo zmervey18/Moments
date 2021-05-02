@@ -17,9 +17,17 @@ Modal.setAppElement('#root')
 
 const HomePage = () => {
 const [registrationModalIsOpen,setRegistrationModalIsOpen]=useState(false)
+const openModal = () => {
+    setRegistrationModalIsOpen(true)
+}
+const closeModal = () => {
+    setRegistrationModalIsOpen(false)
+}
     return (
         <div>
-            <Header />
+            <Header 
+            openRegistrationModal={openModal}
+            />
             <ImageTile
             image={ideas}
             title="Reflect with us"
@@ -37,16 +45,16 @@ const [registrationModalIsOpen,setRegistrationModalIsOpen]=useState(false)
                 <Button 
                 buttonStyle="btn--red" 
                 text= "Get Journalling" 
-                event= {() => setRegistrationModalIsOpen(true)}
+                event= {openModal}
                 />
             </div>
 
-            <Modal isOpen={registrationModalIsOpen} onRequestClose={() => setRegistrationModalIsOpen(false)}>
+            <Modal isOpen={registrationModalIsOpen} onRequestClose={closeModal}>
                 <Register 
                 modalOpen = {registrationModalIsOpen}
                 />
                 <div>
-                    <button onClick={() => setRegistrationModalIsOpen(false)}>
+                    <button onClick={closeModal}>
                         Close
                     </button>
                 </div>
