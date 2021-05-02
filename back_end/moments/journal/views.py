@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from rest_framework import viewsets, permissions
 
-from .serializers import MomentSerializer, ProfileSerializer, PromptSerializer, UserSerializer
-from .models import Moment, Profile, Prompt
-from django.contrib.auth.models import User
+from .serializers import MomentSerializer, PromptSerializer, UserSerializer
+from .models import Moment, Prompt
 
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 # Create your views here.
 
@@ -27,14 +28,6 @@ class MomentViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
-
-class ProfileViewSet(viewsets.ModelViewSet):
-    queryset = Profile.objects.all()
-    serializer_class = ProfileSerializer
-
-    permission_classes = [
-        permissions.AllowAny
-    ]
 
 class PromptViewSet(viewsets.ModelViewSet):
     queryset = Prompt.objects.all()

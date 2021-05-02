@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'accounts',
     'journal',
     'django_cleanup.apps.CleanupConfig',
 ]
@@ -130,3 +131,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = Path(BASE_DIR, 'media')
 MEDIA_URL = "media/"
+
+AUTH_USER_MODEL = 'accounts.User'
