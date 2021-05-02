@@ -12,11 +12,13 @@ import FeatureList from '../components/FeaturesList/FeatureList'
 import Button from '../components/Button/Button'
 import Footer from '../components/Footer/Footer'
 
-import Register from './Register'
+import SignUp from './SignUp'
 Modal.setAppElement('#root')
 
 const HomePage = () => {
-const [registrationModalIsOpen,setRegistrationModalIsOpen]=useState(false)
+
+const [signupModalIsOpen,setSignupModalIsOpen]=useState(false)
+
     return (
         <div>
             <Header />
@@ -37,19 +39,36 @@ const [registrationModalIsOpen,setRegistrationModalIsOpen]=useState(false)
                 <Button 
                 buttonStyle="btn--red" 
                 text= "Get Journalling" 
-                event= {() => setRegistrationModalIsOpen(true)}
+                event= {() => setSignupModalIsOpen(true)}
                 />
             </div>
 
-            <Modal isOpen={registrationModalIsOpen} onRequestClose={() => setRegistrationModalIsOpen(false)}>
-                <Register 
-                modalOpen = {registrationModalIsOpen}
+            {/* Modal setup for registration page. Opens on clicking "Get Journalling" button */}
+            <Modal 
+                isOpen={signupModalIsOpen} 
+                onRequestClose={() => setSignupModalIsOpen(false)}
+                style={
+                    {
+                        overlay:{
+                            backgroundColor: 'rgba(0, 0, 0, .7)'
+                        },
+                        content:{
+                            position:'fixed',
+                            top:'50%',
+                            left:'50%',
+                            // bottom:'-50%',
+                            // right:'-50%',
+                            transform:'translate(-50%, -50%)',
+                            padding:'50px',
+                            zIndex:1000
+                        }
+
+                    }
+                }
+                >
+                <SignUp 
+                setSignupModalIsOpen={setSignupModalIsOpen}
                 />
-                <div>
-                    <button onClick={() => setRegistrationModalIsOpen(false)}>
-                        Close
-                    </button>
-                </div>
             </Modal>
 
             <Footer /> 

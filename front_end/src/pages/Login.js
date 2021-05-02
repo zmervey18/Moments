@@ -1,0 +1,60 @@
+import React, { useState } from 'react'
+import Modal from 'react-modal'
+
+import Button from '../components/Button/Button'
+import { RiCloseCircleFill } from 'react-icons/ri'
+
+// import SignUp from './SignUp'
+// Modal.setAppElement('#root')
+
+const Login = ({setLoginModalIsOpen}) => {
+
+    // const [signupModalIsOpen,setSignupModalIsOpen]=useState(false)
+
+    return (
+        <div>
+            <div>
+                <RiCloseCircleFill onClick={() => setLoginModalIsOpen(false)}/>
+            </div>
+            <div>
+                <h1>Welcome to Moments</h1>
+            </div>
+
+            <form>
+                <div>
+                    <label>Email</label>
+                    <input type="email" name="Email" placeholder="email"></input>
+                </div>
+
+                 <div>
+                    <label>Password </label>
+                    <input type="text" name="Password" placeholder="password"></input>
+                </div>
+
+                <Button 
+                buttonStyle="btn--red" 
+                type="submit"
+                text= "Login" 
+                value="Login"
+                />
+            </form>
+
+            {/* <div>
+                <h4>Not signed up yet?</h4>
+                <Button 
+                buttonStyle="btn--red" 
+                text= "Get Journalling" 
+                event= {() => setSignupModalIsOpen(true)}
+                />
+
+                <Modal isOpen={signupModalIsOpen} onRequestClose={() => setSignupModalIsOpen(false)}>
+                    <SignUp 
+                    setSignupModalIsOpen={setSignupModalIsOpen}
+                    />
+                </Modal>
+            </div> */}
+        </div>
+    )
+}
+
+export default Login
