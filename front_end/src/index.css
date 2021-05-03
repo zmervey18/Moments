@@ -40,3 +40,9 @@ h3 {
   font-family: "Fredoka One", cursive;
   font-size: 30px;
 }
+
+/* links */
+.text-link {
+  color: inherit;
+  text-decoration: inherit;
+}

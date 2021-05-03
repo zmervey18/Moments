@@ -11,7 +11,7 @@ const Login = ({closeModal, LoginToSignupModalTransition}) => {
 
     return (
         <div>
-            <Link to='/' style={{textDecoration:"none"}}>  
+            <Link to='/' className='text-link'>  
             <div className="closeModalIcon">
                 <RiCloseCircleFill onClick={closeModal}/>
             </div>
