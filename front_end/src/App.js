@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom"; // Route removed for better debugging
 import HomePage from "./pages/HomePage";
 
 function App() {

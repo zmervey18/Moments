@@ -21,3 +21,7 @@ code {
   margin: auto;
   max-width: 400px;
 }
+.closeModalIcon {
+  cursor: pointer;
+  max-height: 50px;
+}

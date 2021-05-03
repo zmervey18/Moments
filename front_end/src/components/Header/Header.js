@@ -1,11 +1,12 @@
 import UnauthNavbar from './UnauthNavbar'
-import AuthNavbar from './AuthNavbar'
-const Header = ({openRegistrationModal}) => {
+// import AuthNavbar from './AuthNavbar'
+const Header = ({signUpModal, loginModal}) => {
     return (
         <div>
             {/* (userIsAuthorised ? <AuthNavbar /> : <UnauthNavbar />) */}
             <UnauthNavbar 
-            openRegistrationModal={openRegistrationModal}
+            signUpModal={signUpModal}
+            loginModal={loginModal}
             />
         </div>
     )

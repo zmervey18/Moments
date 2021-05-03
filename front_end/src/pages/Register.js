@@ -1,10 +1,17 @@
 import Button from '../components/Button/Button'
+import { RiCloseCircleFill } from 'react-icons/ri'
 
-const Register = () => {
+const Register = ({closeModal}) => {
 
     return (
         
         <div>
+            <div className="closeModalIcon">
+                <RiCloseCircleFill onClick={closeModal}/>
+            </div>
+            <div>
+                <h1>Welcome to Moments</h1>
+            </div>
             <form>
                 <div>
                     <label>Username </label>

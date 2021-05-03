@@ -13,20 +13,29 @@ import Button from '../components/Button/Button'
 import Footer from '../components/Footer/Footer'
 
 import Register from './Register'
+import Login from './Login'
 Modal.setAppElement('#root')
 
 const HomePage = () => {
 const [registrationModalIsOpen,setRegistrationModalIsOpen]=useState(false)
-const openModal = () => {
+const [loginModalIsOpen,setLoginModalIsOpen]=useState(false)
+const openSignUpModal = () => {
     setRegistrationModalIsOpen(true)
 }
-const closeModal = () => {
+const closeSignUpModal = () => {
     setRegistrationModalIsOpen(false)
+}
+const openLoginModal = () => {
+    setLoginModalIsOpen(true)
+}
+const closeLoginModal = () => {
+    setLoginModalIsOpen(false)
 }
     return (
         <div>
             <Header 
-            openRegistrationModal={openModal}
+            signUpModal={openSignUpModal}
+            loginModal={openLoginModal}
             />
             <ImageTile
             image={ideas}
@@ -45,21 +54,34 @@ const closeModal = () => {
                 <Button 
                 buttonStyle="btn--red" 
                 text= "Get Journalling" 
-                event= {openModal}
+                event= {openSignUpModal}
                 />
             </div>
 
-            <Modal isOpen={registrationModalIsOpen} onRequestClose={closeModal}>
+            {/* Setting up modal for signing up */}
+            <Modal isOpen={registrationModalIsOpen} onRequestClose={closeSignUpModal}>
                 <Register 
                 modalOpen = {registrationModalIsOpen}
+                closeModal = {closeSignUpModal}
                 />
-                <div>
-                    <button onClick={closeModal}>
-                        Close
-                    </button>
-                </div>
+            {/* <Button 
+                buttonStyle="btn--red" 
+                text= "Close" 
+                event= {closeSignUpModal}
+            />  */}
             </Modal>
-
+            {/* Login button */}
+            <Button 
+                buttonStyle="btn--blue" 
+                text= "Login" 
+                event= {openLoginModal}
+            /> 
+            {/* Setting up modal for logging in */}
+            <Modal isOpen={loginModalIsOpen} onRequestClose={closeLoginModal}>
+            <Login 
+            closeModal={closeLoginModal}
+            />
+            </Modal>
             <Footer /> 
 
         </div>

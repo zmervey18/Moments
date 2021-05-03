@@ -2,7 +2,7 @@ import logo from './../../static/logo_with_text.svg'
 import { Link } from 'react-router-dom'
 import Button from './../Button/Button'
 import './navbar.css'
-const unauthNavbar = ({openRegistrationModal}) => {
+const unauthNavbar = ({signUpModal, loginModal}) => {
     return (
         <nav className="navBar">
             <Link to='/'><img className='logo left' src={logo} alt="Moments Logo"></img></Link>
@@ -11,13 +11,14 @@ const unauthNavbar = ({openRegistrationModal}) => {
                     <Button 
                         buttonStyle="btn--blue" 
                         text= "Sign Up" 
-                        event= {openRegistrationModal}
+                        event= {signUpModal}
                     /> 
                 </Link> 
                 <Link to='/login'>   
                     <Button 
                         buttonStyle="btn--blue" 
                         text= "Login" 
+                        event= {loginModal}
                     /> 
                 </Link>  
             </div>
