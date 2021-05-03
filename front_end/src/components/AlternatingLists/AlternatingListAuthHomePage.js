@@ -5,7 +5,7 @@ import browse from "../../static/browse.svg";
 import browse_journal from "../../static/browse_journal.svg";
 import "./BenefitListItem.css";
 
-const AlternatingListAuthHomePage = ({journallingModal}) => {
+const AlternatingListAuthHomePage = ({journallingModal, guidedJournallingModal}) => {
     return (
        
         <div className="BenefitListVerticalContainer">
@@ -24,6 +24,7 @@ const AlternatingListAuthHomePage = ({journallingModal}) => {
                 alt="Car on a road"
                 textClass="TextContainerLeft"
                 reverse={true}
+                guidedJournallingModal={guidedJournallingModal}
                 
                 />
 

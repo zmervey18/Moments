@@ -3,7 +3,7 @@ import { RiCloseCircleFill } from 'react-icons/ri'
 import { MdAddAPhoto} from 'react-icons/md'
 import { Link } from 'react-router-dom'
 
-const Journalling = ({closeModal}) => {
+const GuidedJournalling = ({closeModal}) => {
     return (
         <div>
             <Link to='/' className='text-link'>  
@@ -13,12 +13,12 @@ const Journalling = ({closeModal}) => {
             </Link>
 
             <div>
-                <h3>Journalling</h3>
+                <h3>Guided Journalling</h3>
             </div>
 
             <form>
                 <div>
-                    <label>Journal Entry:</label>
+                    <label>What is something you are grateful for today?</label>
                     <input type="textarea" name="textValue"/>
                 </div>
 
@@ -43,4 +43,4 @@ const Journalling = ({closeModal}) => {
     )
 }
 
-export default Journalling
+export default GuidedJournalling

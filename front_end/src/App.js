@@ -7,11 +7,9 @@ import Register from "./pages/Register";
 function App() {
   return (
     <Router>
-      {/* <Route path="/" component={HomePage} /> */}
-      <Route path="/" component={AuthHomePage} />
       
-      {/* <Route exact path="/login" component={Login} />
-      <Route exact path="/sign_up" component={Register} /> */}
+      <Route path="/" component={HomePage} />
+      {/* <Route path="/" component={AuthHomePage} /> */}
       
     </Router>
 

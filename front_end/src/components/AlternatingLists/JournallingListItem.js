@@ -7,8 +7,11 @@ const JournallingListItem = ({
   alt,
   textClass,
   reverse = false,
-  journallingModal
+  journallingModal,
+  guidedJournallingModal
 }) => {
+
+  
   return (
     <div className="BenefitListCard">
       <img
@@ -23,6 +26,7 @@ const JournallingListItem = ({
                 buttonStyle="btn--blue" 
                 text= {subtitle} 
                 event={journallingModal}
+                // event={guidedJournallingModal}
                 
                 />
         </div>

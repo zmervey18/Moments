@@ -10,10 +10,12 @@ import Button from '../components/Button/Button'
 import AlternatingListAuthHomePage from '../components/AlternatingLists/AlternatingListAuthHomePage'
 
 import Journalling from '../pages/Journalling'
+import GuidedJournalling from '../pages/GuidedJournalling'
 Modal.setAppElement('#root')
 
 const AuthHomePage = () => {
     const [journallingModalIsOpen,setJournallingModalIsOpen]=useState(false)
+    const [guidedJournallingModalIsOpen,setGuidedJournallingModalIsOpen]=useState(false)
 
 
     const openJournallingModal = () => {
@@ -23,6 +25,12 @@ const AuthHomePage = () => {
         setJournallingModalIsOpen(false)
     }
 
+    const openGuidedJournallingModal = () => {
+        setGuidedJournallingModalIsOpen(true)
+    }
+    const closeGuidedJournallingModal = () => {
+        setGuidedJournallingModalIsOpen(false)
+    }
 
     const customStyles = {
     content : {
@@ -41,14 +49,25 @@ const AuthHomePage = () => {
 
             <AlternatingListAuthHomePage 
             journallingModal={openJournallingModal}
+            guidedJournallingModal={openGuidedJournallingModal}
             />
 
-             {/* Setting up modal for signing up */}
+             {/* Setting up modal for journalling */}
             <div className="modal">
             <Modal style={customStyles} isOpen={journallingModalIsOpen} onRequestClose={closeJournallingModal}>
                 <Journalling 
                 modalOpen = {journallingModalIsOpen}
                 closeModal = {closeJournallingModal}
+                />
+            </Modal>
+            </div>
+
+            {/* Setting up modal for guided journalling */}
+            <div className="modal">
+            <Modal style={customStyles} isOpen={guidedJournallingModalIsOpen} onRequestClose={closeGuidedJournallingModal}>
+                <GuidedJournalling 
+                modalOpen = {guidedJournallingModalIsOpen}
+                closeModal = {closeGuidedJournallingModal}
                 />
             </Modal>
             </div>
