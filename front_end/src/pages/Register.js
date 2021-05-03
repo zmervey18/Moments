@@ -1,13 +1,11 @@
 import Button from '../components/Button/Button'
-import { Link } from 'react-router-dom'
 import { RiCloseCircleFill } from 'react-icons/ri'
+import { Link } from 'react-router-dom'
 
-
-const Login = ({closeModal, LoginToSignupModalTransition}) => {
-
-    // const [signupModalIsOpen,setSignupModalIsOpen]=useState(false)
+const Register = ({SignupToLoginModalTransition, closeModal}) => {
 
     return (
+        
         <div>
             <Link to='/' className='text-link'>  
             <div className="closeModalIcon">
@@ -17,42 +15,62 @@ const Login = ({closeModal, LoginToSignupModalTransition}) => {
             <div>
                 <h3>Welcome to Moments</h3>
             </div>
-
             <form>
                 <div>
                     <label>Email: </label>
                     <input type="email" name="Email" placeholder="journaller@moments.com"></input>
                 </div>
 
-                 <div>
+                <div>
                     <label>Password: </label>
                     <input type="text" name="Password" placeholder="Password"></input>
+                </div>
+
+                <div>
+                    <label>Confirm Password: </label>
+                    <input
+                        type="text"
+                        name="Confirm Password"
+                        placeholder="Password"
+                    ></input>
                 </div>
                 <br/>
                 <div className="formButton">
                 <Button 
                 buttonStyle="btn--red" 
                 type="submit"
-                text= "Login" 
-                value="Login"
+                text= "Register" 
+                value="Register"
                 />
                 </div>
             </form>
-
             <div>
-                <h3>Not signed up yet?</h3>
-                <Link to='/sign-up' style={{textDecoration:"none"}}> 
+                <h3>Already a member?</h3>
+                
+                <Link to='/login' style={{textDecoration:"none"}}>  
                 <div className="formButton">
                 <Button 
                 buttonStyle="btn--red" 
-                text= "Sign up now!" 
-                event= {LoginToSignupModalTransition}
+                text= "Login here!" 
+                event= {SignupToLoginModalTransition}
                 />
                 </div>
                 </Link>
             </div>
         </div>
     )
+    
 }
 
-export default Login
+export default Register
+
+
+                    // <div>
+                    //     <label>Reminder Frequency </label> 
+                    // </div>
+                    // <div>
+                    //     <input type="checkbox"/> <span>None</span> 
+                    //     <input type="checkbox"/> <span>Daily</span>
+                    //     <input type="checkbox"/> <span>Weekly</span>
+                    // </div> 
+           

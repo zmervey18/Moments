@@ -1,33 +1,67 @@
 import React, { useState } from 'react'
 import Modal from 'react-modal'
+import { Link } from 'react-router-dom'
 
 
 import Header from '../components/Header/Header'
 import ImageTile from '../components/Image/ImageTile'
 import ideas from '../static/ideas.svg'
 import my_universe from '../static/my_universe.svg'
-import AlternatingList from '../components/AlternatingLists/AlternatingList'
+import AlternatingListHomePage from '../components/AlternatingLists/AlternatingListHomePage'
 
 import FeatureList from '../components/FeaturesList/FeatureList'
 import Button from '../components/Button/Button'
 import Footer from '../components/Footer/Footer'
 
-import SignUp from './SignUp'
+import Register from './Register'
+import Login from './Login'
 Modal.setAppElement('#root')
 
 const HomePage = () => {
-
-const [signupModalIsOpen,setSignupModalIsOpen]=useState(false)
-
+const customStyles = {
+    content : {
+        top                   : '50%',
+        left                  : '50%',
+        right                 : 'auto',
+        bottom                : 'auto',
+        marginRight           : '-50%',
+        transform             : 'translate(-50%, -50%)'
+    }
+    };
+const [registrationModalIsOpen,setRegistrationModalIsOpen]=useState(false)
+const [loginModalIsOpen,setLoginModalIsOpen]=useState(false)
+const openSignUpModal = () => {
+    setRegistrationModalIsOpen(true)
+}
+const closeSignUpModal = () => {
+    setRegistrationModalIsOpen(false)
+}
+const openLoginModal = () => {
+    setLoginModalIsOpen(true)
+}
+const closeLoginModal = () => {
+    setLoginModalIsOpen(false)
+}
+const LoginToSignupModalTransition = () => {
+    setLoginModalIsOpen(false)
+    setRegistrationModalIsOpen(true)
+}
+const SignupToLoginModalTransition = () => {
+    setLoginModalIsOpen(true)
+    setRegistrationModalIsOpen(false)
+}
     return (
         <div>
-            <Header />
+            <Header 
+            signUpModal={openSignUpModal}
+            loginModal={openLoginModal}
+            />
             <ImageTile
             image={ideas}
             title="Reflect with us"
             alt="Man with thought bubbles around him"
             />            
-            <AlternatingList />
+            <AlternatingListHomePage />
             <FeatureList />
             <ImageTile 
             image={my_universe}
@@ -36,41 +70,34 @@ const [signupModalIsOpen,setSignupModalIsOpen]=useState(false)
             />
             <div className="Center">
                 <h3>Ready to start journalling?</h3>
-                <Button 
-                buttonStyle="btn--red" 
-                text= "Get Journalling" 
-                event= {() => setSignupModalIsOpen(true)}
-                />
+                <Link to="/sign_up">
+                    <Button 
+                    buttonStyle="btn--red" 
+                    text= "Get Journalling" 
+                    event= {openSignUpModal}
+                    />
+                </Link>
             </div>
 
-            {/* Modal setup for registration page. Opens on clicking "Get Journalling" button */}
-            <Modal 
-                isOpen={signupModalIsOpen} 
-                onRequestClose={() => setSignupModalIsOpen(false)}
-                style={
-                    {
-                        overlay:{
-                            backgroundColor: 'rgba(0, 0, 0, .7)'
-                        },
-                        content:{
-                            position:'fixed',
-                            top:'50%',
-                            left:'50%',
-                            // bottom:'-50%',
-                            // right:'-50%',
-                            transform:'translate(-50%, -50%)',
-                            padding:'50px',
-                            zIndex:1000
-                        }
-
-                    }
-                }
-                >
-                <SignUp 
-                setSignupModalIsOpen={setSignupModalIsOpen}
+            {/* Setting up modal for signing up */}
+            <div className="modal">
+            <Modal style={customStyles} isOpen={registrationModalIsOpen} onRequestClose={closeSignUpModal}>
+                <Register 
+                modalOpen = {registrationModalIsOpen}
+                closeModal = {closeSignUpModal}
+                SignupToLoginModalTransition = {SignupToLoginModalTransition}
                 />
             </Modal>
+            </div>
 
+            <div className="modal">
+                <Modal style={customStyles} isOpen={loginModalIsOpen} onRequestClose={closeLoginModal}>
+                <Login 
+                closeModal={closeLoginModal}
+                LoginToSignupModalTransition={LoginToSignupModalTransition}
+                />
+                </Modal>
+            </div>
             <Footer /> 
 
         </div>
