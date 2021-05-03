@@ -1,14 +1,17 @@
 import Button from '../components/Button/Button'
 import { RiCloseCircleFill } from 'react-icons/ri'
+import { Link } from 'react-router-dom'
 
 const Register = ({SignupToLoginModalTransition, closeModal}) => {
 
     return (
         
         <div>
+            <Link to='/' style={{textDecoration:"none"}}>  
             <div className="closeModalIcon">
                 <RiCloseCircleFill onClick={closeModal}/>
             </div>
+            </Link>
             <div>
                 <h3>Welcome to Moments</h3>
             </div>
@@ -43,6 +46,8 @@ const Register = ({SignupToLoginModalTransition, closeModal}) => {
             </form>
             <div>
                 <h3>Already a member?</h3>
+                
+                <Link to='/login' style={{textDecoration:"none"}}>  
                 <div className="formButton">
                 <Button 
                 buttonStyle="btn--red" 
@@ -50,6 +55,7 @@ const Register = ({SignupToLoginModalTransition, closeModal}) => {
                 event= {SignupToLoginModalTransition}
                 />
                 </div>
+                </Link>
             </div>
         </div>
     )
