@@ -16,7 +16,7 @@ import Register from './Register'
 import Login from './Login'
 Modal.setAppElement('#root')
 
-const HomePage = () => {
+const HomePage = ({setToken}) => {
 const customStyles = {
     content : {
         top                   : '50%',
@@ -89,6 +89,7 @@ const SignupToLoginModalTransition = () => {
             <div className="modal">
                 <Modal style={customStyles} isOpen={loginModalIsOpen} onRequestClose={closeLoginModal}>
                 <Login 
+                setToken = {setToken}
                 closeModal={closeLoginModal}
                 LoginToSignupModalTransition={LoginToSignupModalTransition}
                 />
