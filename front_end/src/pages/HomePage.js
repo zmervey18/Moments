@@ -17,6 +17,16 @@ import Login from './Login'
 Modal.setAppElement('#root')
 
 const HomePage = () => {
+const customStyles = {
+    content : {
+        top                   : '50%',
+        left                  : '50%',
+        right                 : 'auto',
+        bottom                : 'auto',
+        marginRight           : '-50%',
+        transform             : 'translate(-50%, -50%)'
+    }
+    };
 const [registrationModalIsOpen,setRegistrationModalIsOpen]=useState(false)
 const [loginModalIsOpen,setLoginModalIsOpen]=useState(false)
 const openSignUpModal = () => {
@@ -59,7 +69,8 @@ const closeLoginModal = () => {
             </div>
 
             {/* Setting up modal for signing up */}
-            <Modal isOpen={registrationModalIsOpen} onRequestClose={closeSignUpModal}>
+            <div className="modal">
+            <Modal style={customStyles} isOpen={registrationModalIsOpen} onRequestClose={closeSignUpModal}>
                 <Register 
                 modalOpen = {registrationModalIsOpen}
                 closeModal = {closeSignUpModal}
@@ -70,18 +81,21 @@ const closeLoginModal = () => {
                 event= {closeSignUpModal}
             />  */}
             </Modal>
-            {/* Login button */}
+            </div>
+            {/* Login button
             <Button 
                 buttonStyle="btn--blue" 
                 text= "Login" 
                 event= {openLoginModal}
-            /> 
+            />  */}
             {/* Setting up modal for logging in */}
-            <Modal isOpen={loginModalIsOpen} onRequestClose={closeLoginModal}>
-            <Login 
-            closeModal={closeLoginModal}
-            />
-            </Modal>
+            <div className="modal">
+                <Modal style={customStyles} isOpen={loginModalIsOpen} onRequestClose={closeLoginModal}>
+                <Login 
+                closeModal={closeLoginModal}
+                />
+                </Modal>
+            </div>
             <Footer /> 
 
         </div>

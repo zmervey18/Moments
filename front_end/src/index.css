@@ -25,3 +25,11 @@ code {
   cursor: pointer;
   max-height: 50px;
 }
+.modal {
+  max-height: 500px;
+  max-width: 500px;
+}
+.formButton { 
+  margin: auto;
+  display: flex;
+}

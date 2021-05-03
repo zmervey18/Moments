@@ -19,21 +19,23 @@ const Login = ({closeModal}) => {
 
             <form>
                 <div>
-                    <label>Email</label>
-                    <input type="email" name="Email" placeholder="email"></input>
+                    <label>Email: </label>
+                    <input type="email" name="Email" placeholder="journaller@moments.com"></input>
                 </div>
 
                  <div>
-                    <label>Password </label>
-                    <input type="text" name="Password" placeholder="password"></input>
+                    <label>Password: </label>
+                    <input type="text" name="Password" placeholder="Password"></input>
                 </div>
-
+                <br/>
+                <div className="formButton">
                 <Button 
                 buttonStyle="btn--red" 
                 type="submit"
                 text= "Login" 
                 value="Login"
                 />
+                </div>
             </form>
 
             {/* <div>

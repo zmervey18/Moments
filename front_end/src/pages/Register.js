@@ -14,35 +14,32 @@ const Register = ({closeModal}) => {
             </div>
             <form>
                 <div>
-                    <label>Username </label>
-                    <input type="text" name="Username" placeholder="username"></input>
+                    <label>Email: </label>
+                    <input type="email" name="Email" placeholder="journaller@moments.com"></input>
                 </div>
 
                 <div>
-                    <label>Email </label>
-                    <input type="email" name="Email" placeholder="username"></input>
-                </div>
-
-                <div>
-                    <label>Password </label>
+                    <label>Password: </label>
                     <input type="text" name="Password" placeholder="Password"></input>
                 </div>
 
                 <div>
-                    <label>Confirm Password </label>
+                    <label>Confirm Password: </label>
                     <input
                         type="text"
                         name="Confirm Password"
                         placeholder="Password"
                     ></input>
                 </div>
+                <br/>
+                <div className="formButton">
                 <Button 
                 buttonStyle="btn--red" 
                 type="submit"
                 text= "Register" 
                 value="Register"
                 />
-                
+                </div>
             </form>
         </div>
     )
