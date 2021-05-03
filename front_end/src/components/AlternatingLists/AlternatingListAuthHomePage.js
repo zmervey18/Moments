@@ -11,19 +11,20 @@ const AlternatingListAuthHomePage = ({journallingModal}) => {
         <div className="BenefitListVerticalContainer">
             <div className="BenefitListContainer">
                 <JournallingListItem
-                image={guided}
-                subtitle="Guided Journalling"
-                alt="Car on a road"
-                textClass="TextContainerRight"
-                />
-
-                <JournallingListItem
                 image={freestyle}
                 subtitle="Freestyle Journalling"
                 alt="Woman facing a big journal and writing"
+                textClass="TextContainerRight"
+                journallingModal={journallingModal}
+                />
+
+                <JournallingListItem
+                image={guided}
+                subtitle="Guided Journalling"
+                alt="Car on a road"
                 textClass="TextContainerLeft"
                 reverse={true}
-                journallingModal={journallingModal}
+                
                 />
 
                 <JournallingListItem
