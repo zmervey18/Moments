@@ -84,20 +84,8 @@ const SignupToLoginModalTransition = () => {
                 closeModal = {closeSignUpModal}
                 SignupToLoginModalTransition = {SignupToLoginModalTransition}
                 />
-            {/* <Button 
-                buttonStyle="btn--red" 
-                text= "Close" 
-                event= {closeSignUpModal}
-            />  */}
             </Modal>
             </div>
-            {/* Login button
-            <Button 
-                buttonStyle="btn--blue" 
-                text= "Login" 
-                event= {openLoginModal}
-            />  */}
-            {/* Setting up modal for logging in */}
             <div className="modal">
                 <Modal style={customStyles} isOpen={loginModalIsOpen} onRequestClose={closeLoginModal}>
                 <Login 
