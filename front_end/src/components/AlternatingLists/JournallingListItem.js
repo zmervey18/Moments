@@ -7,6 +7,7 @@ const JournallingListItem = ({
   alt,
   textClass,
   reverse = false,
+  journallingModal
 }) => {
   return (
     <div className="BenefitListCard">
@@ -21,6 +22,7 @@ const JournallingListItem = ({
                 <Button 
                 buttonStyle="btn--blue" 
                 text= {subtitle} 
+                event={journallingModal}
                 
                 />
         </div>

@@ -9,11 +9,50 @@ import Footer from '../components/Footer/Footer'
 import Button from '../components/Button/Button'
 import AlternatingListAuthHomePage from '../components/AlternatingLists/AlternatingListAuthHomePage'
 
+import Journalling from '../pages/Journalling'
+Modal.setAppElement('#root')
+
 const AuthHomePage = () => {
+    const [journallingModalIsOpen,setJournallingModalIsOpen]=useState(false)
+
+
+    const openJournallingModal = () => {
+        setJournallingModalIsOpen(true)
+    }
+    const closeJournallingModal = () => {
+        setJournallingModalIsOpen(false)
+    }
+
+
+    const customStyles = {
+    content : {
+        top                   : '50%',
+        left                  : '50%',
+        right                 : 'auto',
+        bottom                : 'auto',
+        marginRight           : '-50%',
+        transform             : 'translate(-50%, -50%)'
+    }
+    };
+
     return (
         <div>
             <AuthNavbar/>
-            <AlternatingListAuthHomePage />
+
+            <AlternatingListAuthHomePage 
+            journallingModal={openJournallingModal}
+            />
+
+             {/* Setting up modal for signing up */}
+            <div className="modal">
+            <Modal style={customStyles} isOpen={journallingModalIsOpen} onRequestClose={closeJournallingModal}>
+                <Journalling 
+                modalOpen = {journallingModalIsOpen}
+                closeModal = {closeJournallingModal}
+                />
+            </Modal>
+            </div>
+
             <Footer /> 
         </div>
     )
