@@ -21,6 +21,8 @@ code {
   margin: auto;
   max-width: 400px;
 }
+
+/* Modals */
 .closeModalIcon {
   cursor: pointer;
   max-height: 50px;
@@ -32,4 +34,8 @@ code {
 .formButton { 
   margin: auto;
   display: flex;
+}
+h3 {
+  font-family: "Fredoka One", cursive;
+  font-size: 30px;
 }

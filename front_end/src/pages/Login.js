@@ -4,7 +4,7 @@ import { RiCloseCircleFill } from 'react-icons/ri'
 // import SignUp from './SignUp'
 // Modal.setAppElement('#root')
 
-const Login = ({closeModal}) => {
+const Login = ({closeModal, LoginToSignupModalTransition}) => {
 
     // const [signupModalIsOpen,setSignupModalIsOpen]=useState(false)
 
@@ -14,7 +14,7 @@ const Login = ({closeModal}) => {
                 <RiCloseCircleFill onClick={closeModal}/>
             </div>
             <div>
-                <h1>Welcome to Moments</h1>
+                <h3>Welcome to Moments</h3>
             </div>
 
             <form>
@@ -38,19 +38,16 @@ const Login = ({closeModal}) => {
                 </div>
             </form>
 
-            {/* <div>
-                <h4>Not signed up yet?</h4>
+            <div>
+                <h3>Not signed up yet?</h3>
+                <div className="formButton">
                 <Button 
                 buttonStyle="btn--red" 
-                text= "Get Journalling" 
-                event= {() => setSignupModalIsOpen(true)}
+                text= "Sign up now!" 
+                event= {LoginToSignupModalTransition}
                 />
-                <Modal isOpen={signupModalIsOpen} onRequestClose={() => setSignupModalIsOpen(false)}>
-                    <SignUp 
-                    setSignupModalIsOpen={setSignupModalIsOpen}
-                    />
-                </Modal>
-            </div> */}
+                </div>
+            </div>
         </div>
     )
 }

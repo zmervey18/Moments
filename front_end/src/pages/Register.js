@@ -1,7 +1,7 @@
 import Button from '../components/Button/Button'
 import { RiCloseCircleFill } from 'react-icons/ri'
 
-const Register = ({closeModal}) => {
+const Register = ({SignupToLoginModalTransition, closeModal}) => {
 
     return (
         
@@ -10,7 +10,7 @@ const Register = ({closeModal}) => {
                 <RiCloseCircleFill onClick={closeModal}/>
             </div>
             <div>
-                <h1>Welcome to Moments</h1>
+                <h3>Welcome to Moments</h3>
             </div>
             <form>
                 <div>
@@ -41,6 +41,16 @@ const Register = ({closeModal}) => {
                 />
                 </div>
             </form>
+            <div>
+                <h3>Already a member?</h3>
+                <div className="formButton">
+                <Button 
+                buttonStyle="btn--red" 
+                text= "Login here!" 
+                event= {SignupToLoginModalTransition}
+                />
+                </div>
+            </div>
         </div>
     )
     

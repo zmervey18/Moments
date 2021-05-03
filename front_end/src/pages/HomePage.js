@@ -41,6 +41,14 @@ const openLoginModal = () => {
 const closeLoginModal = () => {
     setLoginModalIsOpen(false)
 }
+const LoginToSignupModalTransition = () => {
+    setLoginModalIsOpen(false)
+    setRegistrationModalIsOpen(true)
+}
+const SignupToLoginModalTransition = () => {
+    setLoginModalIsOpen(true)
+    setRegistrationModalIsOpen(false)
+}
     return (
         <div>
             <Header 
@@ -74,6 +82,7 @@ const closeLoginModal = () => {
                 <Register 
                 modalOpen = {registrationModalIsOpen}
                 closeModal = {closeSignUpModal}
+                SignupToLoginModalTransition = {SignupToLoginModalTransition}
                 />
             {/* <Button 
                 buttonStyle="btn--red" 
@@ -93,6 +102,7 @@ const closeLoginModal = () => {
                 <Modal style={customStyles} isOpen={loginModalIsOpen} onRequestClose={closeLoginModal}>
                 <Login 
                 closeModal={closeLoginModal}
+                LoginToSignupModalTransition={LoginToSignupModalTransition}
                 />
                 </Modal>
             </div>
