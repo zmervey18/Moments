@@ -1,0 +1,14 @@
+
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 15px;
+  background-color: #a8dadc;
+  font-family: "Caveat", cursive;
+  width: 100%;
+}
+
+.logo {
+  max-height: 100px;
+}
