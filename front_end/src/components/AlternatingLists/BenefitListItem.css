@@ -1,0 +1,55 @@
+.BenefitListVerticalContainer {
+  max-height: 2000px;
+  padding: 10px;
+  margin: auto;
+  display: flex;
+  /* background-color: blue; */
+}
+
+.BenefitListContainer {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 2rem 4rem;
+  text-align: center;
+}
+
+.BenefitListCard {
+  padding: 40px 50px;
+  align-items: center;
+  max-width: 800px;
+  display: flex;
+  flex-wrap: nowrap;
+  margin: auto;
+}
+
+.BenefitListImage {
+  max-height: 400px;
+  max-width: 800px;
+  margin: auto;
+}
+.TextContainerRight {
+  /* background-color: green; */
+  align-self: center;
+  font-family: "Fredoka One", cursive;
+  font-size: 30px;
+  padding-left: 60px;
+}
+
+.TextContainerLeft {
+  /* background-color: yellow; */
+  align-self: flex-start;
+  font-family: "Fredoka One", cursive;
+  font-size: 30px;
+  padding-left: 30px;
+}
+
+.BenefitListCard .first,
+.BenefitListImage .first {
+  order: 1;
+}
+
+.BenefitListCard .second,
+.BenefitListImage .second {
+  order: 2;
+}

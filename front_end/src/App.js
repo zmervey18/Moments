@@ -1,11 +1,13 @@
-
-
+import { BrowserRouter as Router } from "react-router-dom"; // Route removed for better debugging
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
-    <div>
-        <p>Hello</p>
-    </div>
+    <Router>
+      <HomePage/>
+    </Router>
+
+   
   );
 }
 
