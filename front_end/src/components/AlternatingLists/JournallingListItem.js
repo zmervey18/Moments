@@ -7,7 +7,8 @@ const JournallingListItem = ({
   alt,
   textClass,
   reverse = false,
-  event
+  event,
+  linkTo
 }) => {
 
   
@@ -21,13 +22,18 @@ const JournallingListItem = ({
       <div className={`${textClass} ${reverse ? "first" : "second"}`}>
 
        <div className="formButton">
-         
-                <Button 
+          {!linkTo ? <Button 
                 buttonStyle="btn--blue" 
                 text= {subtitle} 
                 event={event}
-                
+                /> : 
+                <Button 
+                buttonStyle="btn--blue" 
+                text= {subtitle} 
+                linkTo={linkTo}
                 />
+                }
+                
         </div>
         
       </div>

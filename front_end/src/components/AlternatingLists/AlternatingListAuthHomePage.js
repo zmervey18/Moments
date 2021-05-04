@@ -44,6 +44,7 @@ const AlternatingListAuthHomePage = ({journallingModal, guidedJournallingModal, 
                 alt="Man standing in front of a photo album"
                 textClass="TextContainerLeft"
                 reverse={true}
+                linkTo='/browse-moments'
                 />
 
                 <JournallingListItem
@@ -51,6 +52,7 @@ const AlternatingListAuthHomePage = ({journallingModal, guidedJournallingModal, 
                 subtitle="Browse Journal Entries"
                 alt="Man facing a page with content"
                 textClass="TextContainerRight"
+                linkTo='/browse-journal'
                 />
 
                
