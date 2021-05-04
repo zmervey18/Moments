@@ -38,8 +38,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'journal'
+    'rest_framework',
+    'knox',
+    'accounts',
+    'journal',
+    'django_cleanup.apps.CleanupConfig',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'knox.auth.TokenAuthentication',
+    ],
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -127,3 +137,6 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = Path(BASE_DIR, 'media')
+MEDIA_URL = "media/"
+
+AUTH_USER_MODEL = 'accounts.User'
