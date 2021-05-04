@@ -1,12 +1,33 @@
 import Button from '../components/Button/Button'
 import { Link } from 'react-router-dom'
 import { RiCloseCircleFill } from 'react-icons/ri'
+import PropTypes from 'prop-types'
+import { useState } from 'react'
 
+// import SignUp from './SignUp'
+// Modal.setAppElement('#root')
 
-const Login = ({closeModal, LoginToSignupModalTransition}) => {
-
-    // const [signupModalIsOpen,setSignupModalIsOpen]=useState(false)
-
+const Login = ({closeModal, LoginToSignupModalTransition, setToken}) => {
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+    async function loginUser(credentials) {
+        return fetch('http://jsonplaceholder.typicode.com/users', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(credentials)
+        })
+          .then(data => data.json())
+    }
+    const handleSubmit = async e => {
+        e.preventDefault();
+        const token = await loginUser({
+          email,
+          password
+        });
+        setToken(token);
+      }
     return (
         <div>
             <Link to='/' className='text-link'>  
@@ -18,23 +39,27 @@ const Login = ({closeModal, LoginToSignupModalTransition}) => {
                 <h3>Welcome to Moments</h3>
             </div>
 
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div>
                     <label>Email: </label>
-                    <input type="email" name="Email" placeholder="journaller@moments.com"></input>
+                    <input type="email" name="Email" placeholder="journaller@moments.com"
+                    onChange={e => setEmail(e.target.value)}
+                    ></input>
                 </div>
 
                  <div>
                     <label>Password: </label>
-                    <input type="text" name="Password" placeholder="Password"></input>
+                    <input type="text" name="Password" placeholder="Password"
+                    onChange={e => setPassword(e.target.value)}
+                    ></input>
                 </div>
                 <br/>
                 <div className="formButton">
                 <Button 
                 buttonStyle="btn--red" 
-                type="submit"
                 text= "Login" 
                 value="Login"
+                type="submit"
                 />
                 </div>
             </form>
@@ -55,4 +80,7 @@ const Login = ({closeModal, LoginToSignupModalTransition}) => {
     )
 }
 
+Login.propTypes = {
+    setToken: PropTypes.func.isRequired
+  }
 export default Login
