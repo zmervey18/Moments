@@ -25,7 +25,7 @@ const JournallingListItem = ({
                 buttonStyle="btn--blue" 
                 text= {subtitle} 
                 event={event}
-                // event={guidedJournallingModal}
+                
                 
                 />
         </div>
