@@ -21,11 +21,11 @@ const JournallingListItem = ({
       <div className={`${textClass} ${reverse ? "first" : "second"}`}>
 
        <div className="formButton">
+         
                 <Button 
                 buttonStyle="btn--blue" 
                 text= {subtitle} 
                 event={event}
-                
                 
                 />
         </div>
