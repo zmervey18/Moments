@@ -6,9 +6,10 @@ function App() {
   const [token, setToken] = useState();
   return (
     <Router>
+      {!token ? 
       <HomePage
       setToken = { setToken }
-      />
+      /> : console.log("You have a token")}
     </Router>
 
    
