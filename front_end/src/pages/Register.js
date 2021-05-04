@@ -63,3 +63,14 @@ const Register = ({SignupToLoginModalTransition, closeModal}) => {
 }
 
 export default Register
+
+
+                    // <div>
+                    //     <label>Reminder Frequency </label> 
+                    // </div>
+                    // <div>
+                    //     <input type="checkbox"/> <span>None</span> 
+                    //     <input type="checkbox"/> <span>Daily</span>
+                    //     <input type="checkbox"/> <span>Weekly</span>
+                    // </div> 
+           

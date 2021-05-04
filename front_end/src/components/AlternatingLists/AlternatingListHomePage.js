@@ -5,7 +5,7 @@ import sleep from "../../static/sleep.svg";
 import journal from "../../static/journal.svg";
 import "./BenefitListItem.css";
 
-const AlternatingList = () => {
+const AlternatingListHomePage = () => {
   return (
     <div className="BenefitListVerticalContainer">
       <div className="BenefitListContainer">
@@ -34,4 +34,4 @@ const AlternatingList = () => {
   );
 };
 
-export default AlternatingList;
+export default AlternatingListHomePage;

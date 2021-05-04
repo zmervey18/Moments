@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import Modal from 'react-modal'
+import { Link } from 'react-router-dom'
 
 
 import Header from '../components/Header/Header'
 import ImageTile from '../components/Image/ImageTile'
 import ideas from '../static/ideas.svg'
 import my_universe from '../static/my_universe.svg'
-import AlternatingList from '../components/AlternatingLists/AlternatingList'
+import AlternatingListHomePage from '../components/AlternatingLists/AlternatingListHomePage'
 
 import FeatureList from '../components/FeaturesList/FeatureList'
 import Button from '../components/Button/Button'
@@ -16,7 +17,7 @@ import Register from './Register'
 import Login from './Login'
 Modal.setAppElement('#root')
 
-const HomePage = () => {
+const HomePage = ({setToken}) => {
 const customStyles = {
     content : {
         top                   : '50%',
@@ -60,7 +61,7 @@ const SignupToLoginModalTransition = () => {
             title="Reflect with us"
             alt="Man with thought bubbles around him"
             />            
-            <AlternatingList />
+            <AlternatingListHomePage />
             <FeatureList />
             <ImageTile 
             image={my_universe}
@@ -69,11 +70,13 @@ const SignupToLoginModalTransition = () => {
             />
             <div className="Center">
                 <h3>Ready to start journalling?</h3>
-                <Button 
-                buttonStyle="btn--red" 
-                text= "Get Journalling" 
-                event= {openSignUpModal}
-                />
+                <Link to="/sign_up">
+                    <Button 
+                    buttonStyle="btn--red" 
+                    text= "Get Journalling" 
+                    event= {openSignUpModal}
+                    />
+                </Link>
             </div>
 
             {/* Setting up modal for signing up */}
@@ -89,6 +92,7 @@ const SignupToLoginModalTransition = () => {
             <div className="modal">
                 <Modal style={customStyles} isOpen={loginModalIsOpen} onRequestClose={closeLoginModal}>
                 <Login 
+                setToken = {setToken}
                 closeModal={closeLoginModal}
                 LoginToSignupModalTransition={LoginToSignupModalTransition}
                 />

@@ -13,4 +13,3 @@ const Header = ({signUpModal, loginModal}) => {
 }
 
 export default Header
-
