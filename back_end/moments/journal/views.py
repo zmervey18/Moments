@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets, permissions
 
-from .serializers import MomentSerializer, PromptSerializer, UserSerializer
+from .serializers import MomentSerializer, PromptSerializer#, UserSerializer
 from .models import Moment, Prompt
 
 from django.contrib.auth import get_user_model
@@ -29,13 +29,13 @@ class IsAdminOrReadOnly(permissions.BasePermission):
         )
 
 
-class UserViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+# class UserViewSet(viewsets.ReadOnlyModelViewSet):
+#     queryset = User.objects.all()
+#     serializer_class = UserSerializer
 
-    permission_classes = [
-        permissions.IsAuthenticated
-    ]
+#     permission_classes = [
+#         permissions.IsAuthenticated
+#     ]
 
 class MomentViewSet(viewsets.ModelViewSet):
     serializer_class = MomentSerializer
