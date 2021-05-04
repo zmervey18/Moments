@@ -41,8 +41,8 @@ const Login = ({closeModal, LoginToSignupModalTransition, setToken}) => {
 
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Email: </label>
-                    <input type="text" name="Email" placeholder="journaller@moments.com"
+                    <label>Username: </label>
+                    <input type="text" name="Username" placeholder="Momentous"
                     onChange={e => setUsername(e.target.value)}
                     ></input>
                 </div>
