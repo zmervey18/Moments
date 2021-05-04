@@ -86,6 +86,7 @@ const SignupToLoginModalTransition = () => {
                 modalOpen = {registrationModalIsOpen}
                 closeModal = {closeSignUpModal}
                 SignupToLoginModalTransition = {SignupToLoginModalTransition}
+                setToken = {setToken}
                 />
             </Modal>
             </div>
