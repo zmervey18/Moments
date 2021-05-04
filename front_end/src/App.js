@@ -15,7 +15,7 @@ function App() {
       
       <HomePage
       setToken = { setToken }
-      />
+      /> : console.log("You have a token")}
     </Router>
 
    
