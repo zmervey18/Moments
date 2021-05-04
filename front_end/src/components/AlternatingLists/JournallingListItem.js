@@ -7,8 +7,7 @@ const JournallingListItem = ({
   alt,
   textClass,
   reverse = false,
-  journallingModal,
-  guidedJournallingModal
+  event
 }) => {
 
   
@@ -25,7 +24,7 @@ const JournallingListItem = ({
                 <Button 
                 buttonStyle="btn--blue" 
                 text= {subtitle} 
-                event={journallingModal}
+                event={event}
                 // event={guidedJournallingModal}
                 
                 />

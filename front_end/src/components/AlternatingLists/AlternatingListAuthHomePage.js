@@ -15,7 +15,7 @@ const AlternatingListAuthHomePage = ({journallingModal, guidedJournallingModal})
                 subtitle="Freestyle Journalling"
                 alt="Woman facing a big journal and writing"
                 textClass="TextContainerRight"
-                journallingModal={journallingModal}
+                event={journallingModal}
                 />
 
                 <JournallingListItem
@@ -24,7 +24,7 @@ const AlternatingListAuthHomePage = ({journallingModal, guidedJournallingModal})
                 alt="Car on a road"
                 textClass="TextContainerLeft"
                 reverse={true}
-                guidedJournallingModal={guidedJournallingModal}
+                event={guidedJournallingModal}
                 
                 />
 
