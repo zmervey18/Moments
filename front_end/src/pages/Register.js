@@ -1,9 +1,23 @@
 import Button from '../components/Button/Button'
 import { RiCloseCircleFill } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 const Register = ({SignupToLoginModalTransition, closeModal}) => {
 
+    const [email, setEmail] = useState()
+    const [password, setPassword] = useState()
+    const [confirmPassword, setConfirmPassword] = useState()
+
+    const handleSubmit = () => {
+        // perform all neccassary validations
+        if (password !== confirmPassword) {
+            alert("Passwords don't match");
+        } else {
+            console.log(email, password, confirmPassword)
+            // make API call
+        }
+    }
     return (
         
         <div>
@@ -15,15 +29,19 @@ const Register = ({SignupToLoginModalTransition, closeModal}) => {
             <div>
                 <h3>Welcome to Moments</h3>
             </div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div>
                     <label>Email: </label>
-                    <input type="email" name="Email" placeholder="journaller@moments.com"></input>
+                    <input type="email" name="Email" placeholder="journaller@moments.com"
+                    onChange={e => setEmail(e.target.value)}
+                    ></input>
                 </div>
 
-                <div>
+                 <div>
                     <label>Password: </label>
-                    <input type="text" name="Password" placeholder="Password"></input>
+                    <input type="text" name="Password" placeholder="Password"
+                    onChange={e => setPassword(e.target.value)}
+                    ></input>
                 </div>
 
                 <div>
@@ -31,7 +49,8 @@ const Register = ({SignupToLoginModalTransition, closeModal}) => {
                     <input
                         type="text"
                         name="Confirm Password"
-                        placeholder="Password"
+                        placeholder="Confirm Password"
+                        onChange={e => setConfirmPassword(e.target.value)}
                     ></input>
                 </div>
                 <br/>

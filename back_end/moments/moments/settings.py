@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'knox',
+    'drf_yasg',
     'accounts',
     'journal',
     'django_cleanup.apps.CleanupConfig',

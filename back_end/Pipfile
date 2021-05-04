@@ -9,6 +9,7 @@ Pillow = "*"
 djangorestframework = "*"
 django-cleanup = "*"
 django-rest-knox = "*"
+drf-yasg = "*"
 
 [dev-packages]
 

@@ -8,10 +8,10 @@ import { useState } from 'react'
 // Modal.setAppElement('#root')
 
 const Login = ({closeModal, LoginToSignupModalTransition, setToken}) => {
-    const [email, setEmail] = useState();
+    const [username, setUsername] = useState();
     const [password, setPassword] = useState();
     async function loginUser(credentials) {
-        return fetch('http://jsonplaceholder.typicode.com/users', {
+        return fetch('/api/auth/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -23,10 +23,10 @@ const Login = ({closeModal, LoginToSignupModalTransition, setToken}) => {
     const handleSubmit = async e => {
         e.preventDefault();
         const token = await loginUser({
-          email,
+          username,
           password
         });
-        setToken(token);
+        setToken(token['token']);
       }
     return (
         <div>
@@ -41,9 +41,9 @@ const Login = ({closeModal, LoginToSignupModalTransition, setToken}) => {
 
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Email: </label>
-                    <input type="email" name="Email" placeholder="journaller@moments.com"
-                    onChange={e => setEmail(e.target.value)}
+                    <label>Username: </label>
+                    <input type="text" name="Username" placeholder="Momentous"
+                    onChange={e => setUsername(e.target.value)}
                     ></input>
                 </div>
 
