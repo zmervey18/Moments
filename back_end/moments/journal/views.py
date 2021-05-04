@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework import viewsets, permissions
 
-from .serializers import MomentSerializer, PromptSerializer, UserSerializer
-from .models import Moment, Prompt
+from .serializers import EntrySerializer, MomentSerializer, PromptSerializer, UserSerializer
+from .models import Entry, Moment, Prompt
 
 from django.contrib.auth import get_user_model
 User = get_user_model()
@@ -40,11 +40,25 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet):
         permissions.IsAuthenticated
     ]
 
+class EntryViewSet(viewsets.ModelViewSet):
+    serializer_class = EntrySerializer
+
+    permission_classes = [
+        IsOwner
+    ]
+
+    def get_queryset(self):
+        user = self.request.user
+        return Entry.objects.filter(owner=user)
+    
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
+
 class MomentViewSet(viewsets.ModelViewSet):
     serializer_class = MomentSerializer
 
     permission_classes = [
-        permissions.IsAuthenticated,
         IsOwner
     ]
 

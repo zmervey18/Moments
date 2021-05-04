@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import Prompt, Moment
+from .models import Entry, Moment, Prompt
 # Register your models here.
 
-admin.site.register(Prompt)
+admin.site.register(Entry)
 admin.site.register(Moment)
+admin.site.register(Prompt)
