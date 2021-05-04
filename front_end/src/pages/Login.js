@@ -26,7 +26,11 @@ const Login = ({closeModal, LoginToSignupModalTransition, setToken}) => {
           username,
           password
         });
+        if (!token['token']) {
+            alert(token['username'] || token['password'])
+        } else {
         setToken(token['token']);
+        }
       }
     return (
         <div>

@@ -13,7 +13,7 @@ const Register = ({SignupToLoginModalTransition, closeModal, setToken}) => {
     async function registerUser(credentials) {
         if (password !== confirmPassword){
             alert("Passwords don't match");
-            return null
+            return -1
     }   else {
         return fetch('/api/auth/register', {
             method: 'POST',
@@ -32,8 +32,10 @@ const Register = ({SignupToLoginModalTransition, closeModal, setToken}) => {
           password,
           email
         });
-        if (!token['token']) {
+        if ((!token['token']) && (token['username'])) {
             alert(token['username'])
+        } else if ((!token['token']) && (token['password'])){
+            alert(token['password'])
         }
         else { setToken(token['token']) }
     }
