@@ -4,7 +4,7 @@ import { RiCloseCircleFill } from 'react-icons/ri'
 import { MdAddAPhoto} from 'react-icons/md'
 import { Link } from 'react-router-dom'
 
-const AddMoments = () => {
+const AddMoments = ({closeModal}) => {
     return (
         <div>
             <div>

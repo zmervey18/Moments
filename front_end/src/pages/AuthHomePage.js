@@ -11,11 +11,13 @@ import AlternatingListAuthHomePage from '../components/AlternatingLists/Alternat
 
 import Journalling from '../pages/Journalling'
 import GuidedJournalling from '../pages/GuidedJournalling'
+import AddMoments from './AddMoments'
 Modal.setAppElement('#root')
 
 const AuthHomePage = ({invalidateToken}) => {
     const [journallingModalIsOpen,setJournallingModalIsOpen]=useState(false)
     const [guidedJournallingModalIsOpen,setGuidedJournallingModalIsOpen]=useState(false)
+    const [momentsModalIsOpen,setMomentsModalIsOpen]=useState(false)
 
 
     const openJournallingModal = () => {
@@ -30,6 +32,13 @@ const AuthHomePage = ({invalidateToken}) => {
     }
     const closeGuidedJournallingModal = () => {
         setGuidedJournallingModalIsOpen(false)
+    }
+
+    const openMomentsModal = () => {
+        setMomentsModalIsOpen(true)
+    }
+    const closeMomentsModal = () => {
+        setMomentsModalIsOpen(false)
     }
 
     const customStyles = {
@@ -54,6 +63,7 @@ const AuthHomePage = ({invalidateToken}) => {
             <AlternatingListAuthHomePage 
             journallingModal={openJournallingModal}
             guidedJournallingModal={openGuidedJournallingModal}
+            momentsModal={openMomentsModal}
             />
 
              {/* Setting up modal for journalling */}
@@ -72,6 +82,16 @@ const AuthHomePage = ({invalidateToken}) => {
                 <GuidedJournalling 
                 modalOpen = {guidedJournallingModalIsOpen}
                 closeModal = {closeGuidedJournallingModal}
+                />
+            </Modal>
+            </div>
+
+            {/* Setting up modal for adding moments */}
+            <div className="modal">
+            <Modal style={customStyles} isOpen={momentsModalIsOpen} onRequestClose={closeMomentsModal}>
+                <AddMoments
+                modalOpen = {momentsModalIsOpen}
+                closeModal = {closeMomentsModal}
                 />
             </Modal>
             </div>

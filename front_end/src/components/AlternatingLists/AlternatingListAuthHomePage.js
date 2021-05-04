@@ -6,7 +6,7 @@ import browse_journal from "../../static/browse_journal.svg";
 import moments from "../../static/moments.svg";
 import "./BenefitListItem.css";
 
-const AlternatingListAuthHomePage = ({journallingModal, guidedJournallingModal}) => {
+const AlternatingListAuthHomePage = ({journallingModal, guidedJournallingModal, momentsModal}) => {
     return (
        
         <div className="BenefitListVerticalContainer">
@@ -34,7 +34,7 @@ const AlternatingListAuthHomePage = ({journallingModal, guidedJournallingModal})
                 subtitle="Add Moments"
                 alt="Car on a road"
                 textClass="TextContainerRight"
-                event={guidedJournallingModal}
+                event={momentsModal}
                 
                 />
 
