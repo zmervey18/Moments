@@ -3,20 +3,39 @@ import { RiCloseCircleFill } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 
-const Register = ({SignupToLoginModalTransition, closeModal}) => {
+const Register = ({SignupToLoginModalTransition, closeModal, setToken}) => {
 
-    const [email, setEmail] = useState()
+    const [username, setUsername] = useState()
     const [password, setPassword] = useState()
     const [confirmPassword, setConfirmPassword] = useState()
+    const [email, setEmail] = useState()
 
-    const handleSubmit = () => {
-        // perform all neccassary validations
-        if (password !== confirmPassword) {
+    async function registerUser(credentials) {
+        if (password !== confirmPassword){
             alert("Passwords don't match");
-        } else {
-            console.log(email, password, confirmPassword)
-            // make API call
+            return null
+    }   else {
+        return fetch('/api/auth/register', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(credentials)
+          })
+            .then(data => data.json())
+    }
+    }
+    const handleSubmit = async e => {
+        e.preventDefault();
+        const token = await registerUser({
+          username,
+          password,
+          email
+        });
+        if (!token['token']) {
+            alert(token['username'])
         }
+        else { setToken(token['token']) }
     }
     return (
         
@@ -30,6 +49,12 @@ const Register = ({SignupToLoginModalTransition, closeModal}) => {
                 <h3>Welcome to Moments</h3>
             </div>
             <form onSubmit={handleSubmit}>
+                <div>
+                    <label>Username: </label>
+                    <input type="text" name="Username" placeholder="Momentous"
+                    onChange={e => setUsername(e.target.value)}
+                    ></input>
+                </div>
                 <div>
                     <label>Email: </label>
                     <input type="email" name="Email" placeholder="journaller@moments.com"
