@@ -13,7 +13,7 @@ import Journalling from '../pages/Journalling'
 import GuidedJournalling from '../pages/GuidedJournalling'
 Modal.setAppElement('#root')
 
-const AuthHomePage = () => {
+const AuthHomePage = ({invalidateToken}) => {
     const [journallingModalIsOpen,setJournallingModalIsOpen]=useState(false)
     const [guidedJournallingModalIsOpen,setGuidedJournallingModalIsOpen]=useState(false)
 
@@ -46,6 +46,10 @@ const AuthHomePage = () => {
     return (
         <div>
             <AuthNavbar/>
+            <Button
+            event={invalidateToken}
+            text="Invalidate token"
+            />
 
             <AlternatingListAuthHomePage 
             journallingModal={openJournallingModal}

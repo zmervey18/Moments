@@ -2,20 +2,23 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import AuthHomePage from "./pages/AuthHomePage";
 import { useState } from 'react';
 import HomePage from "./pages/HomePage";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
 
 function App() {
   const [token, setToken] = useState();
+  const invalidateToken = () => {
+    setToken(false)
+  }
   return (
     <Router>
       
       <Route path="/"/>
-      {/* <Route path="/" component={AuthHomePage} /> */}
-      
+      {!token ? 
       <HomePage
       setToken = { setToken }
-      /> : console.log("You have a token")}
+      /> : 
+      <AuthHomePage
+      invalidateToken = { invalidateToken }
+      />}
     </Router>
 
    
