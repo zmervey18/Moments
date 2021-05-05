@@ -18,19 +18,19 @@ const Register = ({SignupToLoginModalTransition, closeModal, setToken}) => {
         return fetch('/api/auth/register', {
             method: 'POST',
             headers: {
-              'Content-Type': 'application/json'
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(credentials)
-          })
+        })
             .then(data => data.json())
     }
     }
     const handleSubmit = async e => {
         e.preventDefault();
         const token = await registerUser({
-          username,
-          password,
-          email
+            username,
+            password,
+            email
         });
         if ((!token['token']) && (token['username'])) {
             alert(token['username'])
@@ -47,33 +47,30 @@ const Register = ({SignupToLoginModalTransition, closeModal, setToken}) => {
                 <RiCloseCircleFill onClick={closeModal}/>
             </div>
             </Link>
-            <div>
+            <div className="modal-text">
                 <h3>Welcome to Moments</h3>
             </div>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Username: </label>
-                    <input type="text" name="Username" placeholder="Momentous"
+                    <input className="modal-form" type="text" name="Username" placeholder="Please enter a username"
                     onChange={e => setUsername(e.target.value)}
                     ></input>
                 </div>
                 <div>
-                    <label>Email: </label>
-                    <input type="email" name="Email" placeholder="journaller@moments.com"
+                    <input className="modal-form" type="email" name="Email" placeholder="Please enter your email"
                     onChange={e => setEmail(e.target.value)}
                     ></input>
                 </div>
 
-                 <div>
-                    <label>Password: </label>
-                    <input type="text" name="Password" placeholder="Password"
+                <div>
+                    <input className="modal-form" type="text" name="Password" placeholder="Choose a password"
                     onChange={e => setPassword(e.target.value)}
                     ></input>
                 </div>
 
                 <div>
-                    <label>Confirm Password: </label>
                     <input
+                        className="modal-form"
                         type="text"
                         name="Confirm Password"
                         placeholder="Confirm Password"
@@ -91,7 +88,7 @@ const Register = ({SignupToLoginModalTransition, closeModal, setToken}) => {
                 </div>
             </form>
             <div>
-                <h3>Already a member?</h3>
+                <h3 className="modal-text">Already a member?</h3>
                 
                 <Link to='/login' style={{textDecoration:"none"}}>  
                 <div className="formButton">
@@ -119,4 +116,3 @@ export default Register
                     //     <input type="checkbox"/> <span>Daily</span>
                     //     <input type="checkbox"/> <span>Weekly</span>
                     // </div> 
-           
