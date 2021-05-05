@@ -63,7 +63,7 @@ const Register = ({SignupToLoginModalTransition, closeModal, setToken}) => {
                 </div>
 
                 <div>
-                    <input className="modal-form" type="text" name="Password" placeholder="Choose a password"
+                    <input className="modal-form" type="password" name="Password" placeholder="Choose a password"
                     onChange={e => setPassword(e.target.value)}
                     ></input>
                 </div>
@@ -71,7 +71,7 @@ const Register = ({SignupToLoginModalTransition, closeModal, setToken}) => {
                 <div>
                     <input
                         className="modal-form"
-                        type="text"
+                        type="password"
                         name="Confirm Password"
                         placeholder="Confirm Password"
                         onChange={e => setConfirmPassword(e.target.value)}
