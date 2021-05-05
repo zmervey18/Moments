@@ -1,5 +1,6 @@
 import "./BenefitListItem.css";
 import Button from '../Button/Button'
+import {Link} from 'react-router-dom'
 
 const JournallingListItem = ({
   image,
@@ -22,15 +23,18 @@ const JournallingListItem = ({
       <div className={`${textClass} ${reverse ? "first" : "second"}`}>
 
        <div className="formButton">
-          {!linkTo ? <Button 
-                buttonStyle="btn--blue" 
-                text= {subtitle} 
-                event={event}
-                /> : 
+          {linkTo ? 
+                <Link to={linkTo}>
                 <Button 
                 buttonStyle="btn--blue" 
                 text= {subtitle} 
-                linkTo={linkTo}
+                />
+                </Link>
+                 : 
+                <Button 
+                buttonStyle="btn--blue" 
+                text= {subtitle} 
+                event={event}
                 />
                 }
                 

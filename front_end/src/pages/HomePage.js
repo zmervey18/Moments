@@ -70,13 +70,13 @@ const SignupToLoginModalTransition = () => {
             />
             <div className="Center">
                 <h3>Ready to start journalling?</h3>
-                <Link to="/sign_up">
+                {/* <Link to="/sign_up"> */}
                     <Button 
                     buttonStyle="btn--red" 
                     text= "Get Journalling" 
                     event= {openSignUpModal}
                     />
-                </Link>
+                {/* </Link> */}
             </div>
 
             {/* Setting up modal for signing up */}
