@@ -1,12 +1,15 @@
 import Button from '../components/Button/Button'
 import { RiCloseCircleFill } from 'react-icons/ri'
 import { MdAddAPhoto} from 'react-icons/md'
-import { Link } from 'react-router-dom'
+import { Link} from 'react-router-dom'
+import { useHistory } from "react-router-dom";
 import { useState } from 'react'
 
-const Journalling = ({closeModal, token}) => {
+const Journalling = ({closeModal, token, updFrontEndJournals, journalEntries}) => {
     const [title, setTitle] = useState();
     const [body, setBody] = useState();
+    let history= useHistory();
+
     //  Post new journal entry
     const addEntry = async (e) => {
         e.preventDefault();
@@ -21,9 +24,22 @@ const Journalling = ({closeModal, token}) => {
             title: `${title}`,
             body: `${body}`,
             // prompt: `${prompt ? prompt : null}`
-          })
+          }),
         })
+        const data = await res.json()
+        if (res.status === 201) {
+            console.log(data)
+            // updFrontEndJournals([...journalEntries, data])
+            // code to update front end
+        }
+        
+        
+  }
+
+    function handleClick() {
+        history.push("/");
     }
+
     return (
         <div>
             <Link to='/' className='text-link'>  
@@ -59,6 +75,7 @@ const Journalling = ({closeModal, token}) => {
                 type="submit"
                 text= "Create Moment" 
                 value="Create Moment"
+                
                 />
                 </div>
 

@@ -14,7 +14,7 @@ function App() {
   // const [newJournalEntry, setNewJournalEntry] = useState([])
   // setJournalEntries[...journalEntries, newEntry]
   
-  const addJournalEntry = (withNewEntry) => {
+  const updFrontEndJournals = (withNewEntry) => {
     setJournalEntries(withNewEntry)
   }
 
@@ -60,6 +60,7 @@ function App() {
         <AuthHomePage
         invalidateToken = { invalidateToken }
         token = {token}
+        updFrontEndJournals = {updFrontEndJournals}
         />}
         </Route>
       </Switch>
