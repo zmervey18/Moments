@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useReducer } from "react";
 import Modal from "react-modal";
 import MomentsCard from "./MomentsCard";
 import "./MomentsList.css";
 
+import { initialState, momentsReducer } from "./MomentsReducer";
+import { GET_MOMENTS, CLEAR_SELECTION } from "./MomentsTypes";
+
 const MomentsList = () => {
-  const [moments, setMoments] = useState([]);
-  const [momentsModal, setMomentsModal] = useState(0);
+  const [state, dispatch] = useReducer(momentsReducer, initialState);
+
+  const { moments, selection } = state;
 
   useEffect(() => {
     async function getMoments() {
@@ -16,7 +20,7 @@ const MomentsList = () => {
         },
       });
       const data = await res.json();
-      setMoments(data);
+      dispatch({ type: GET_MOMENTS, payload: data });
     }
     getMoments();
   }, []);
@@ -32,33 +36,31 @@ const MomentsList = () => {
     },
   };
 
-  const closeModal = () => setMomentsModal(0);
+  function clearSelection() {
+    dispatch({ type: CLEAR_SELECTION });
+  }
 
   return (
     <div className="gallery">
       <div className="gallery-container">
         {moments.map((moment) => {
-          return <MomentsCard moment={moment} key={moment.pk} setMomentsModal={setMomentsModal} />;
+          return (
+            <MomentsCard moment={moment} key={moment.pk} dispatch={dispatch} />
+          );
         })}
       </div>
-
 
       <div className="modal">
         <Modal
           style={customStyles}
-          isOpen={!!momentsModal}
-          // isOpen={true}
-          onRequestClose={closeModal}
+          isOpen={!!selection}
+          onRequestClose={clearSelection}
         >
-          {
-            !!moments[momentsModal - 1] &&
-
-            <MomentsCard
-            closeModal={closeModal}
-            moment={moments[momentsModal - 1]}
-            // LoginToSignupModalTransition={LoginToSignupModalTransition}
-            />
-          }
+          <MomentsCard
+            closeModal={clearSelection}
+            moment={selection}
+            dispatch={dispatch}
+          />
         </Modal>
       </div>
     </div>
