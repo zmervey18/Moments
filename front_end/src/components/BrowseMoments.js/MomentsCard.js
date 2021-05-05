@@ -1,12 +1,17 @@
 import React from "react";
 
-const MomentsCard = ({moment}) => {
+const MomentsCard = ({moment, setMomentsModal}) => {
   
   return (
-  <div className="moment-card">
+  <div className="moment-card" onClick={() => setMomentsModal(moment.pk)}>
+    <div className="moment-text">
+
     <span>{moment.date}</span>
+    <br />
     <span>{moment.description}</span>
-    <img src={moment.image} alt="" />
+    </div>
+
+    <img src={moment.image} alt="" className="moment-image"/>
   </div>
   );
 };
