@@ -58,12 +58,17 @@ function App() {
   }
   const deleteEntry = async (entry) => {
     const id = entry.id
+    console.log(id)
     const res = await fetch(`/entry/${id}/`, {
       method: 'DELETE',
+      headers: { 
+        'Content-Type': 'application/json',
+        'Authorization': `token ${token}`
+   }
     })
     if (res.status === 204) {
       // UI
-      setJournalEntries(journalEntries.filter((c) => c._id !== entry.id))
+      setJournalEntries(journalEntries.filter((e) => e._id !== entry.id))
     }
   }
   return (
