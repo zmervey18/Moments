@@ -22,19 +22,25 @@
   background-image: linear-gradient(60deg, #ffffff 0%, #a8dadc 100%);
 }
 
-.Center h3 {
+.Section5 {
+  text-align: center;
+  margin: auto;
+  max-width: 400px;
+}
+
+.Section5 h3 {
   padding-top: 1.5rem;
   padding-bottom: 1rem;
 }
 
-.Center .btn--red {
+.Section5 .btn--red {
   padding: 1rem;
   font-size: 1.1rem;
   border-radius: 2rem;
   /* transition: transform .2s ease-in-out; */
 }
 
-.Center .btn--red:hover {
+.Section5 .btn--red:hover {
   transform: scale(1.2);
   transition: background 0.5s ease-out, color 0.5s ease-out;
 }
