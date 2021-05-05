@@ -13,10 +13,6 @@ function App() {
   const [journalEntries, setJournalEntries] = useState([])
   // const [newJournalEntry, setNewJournalEntry] = useState([])
   // setJournalEntries[...journalEntries, newEntry]
-  
-  const updFrontEndJournals = (withNewEntry) => {
-    setJournalEntries(withNewEntry)
-  }
 
   // fetch all entries
   useEffect(() => {
@@ -31,12 +27,40 @@ function App() {
     const data = await res.json()
     {(data.length <= 1) ? 
       setJournalEntries(data) : setJournalEntries([...data])}
-    console.log(data)
+    // console.log(data)
     return data
     }
     if (token){fetchEntries()}
   }, [token])
 
+  //  Post new journal entry
+  const [title, setTitle] = useState();
+  const [body, setBody] = useState(); 
+  const addEntry = async (e) => {
+      e.preventDefault();
+      // Add entry to database
+      const res = await fetch('/entry/', {
+        method: 'POST', 
+        headers: { 
+            'Content-Type': 'application/json',
+            'Authorization': `token ${token}`
+       },
+        body: JSON.stringify({ 
+          title: `${title}`,
+          body: `${body}`,
+          // prompt: `${prompt ? prompt : null}`
+        }),
+      })
+      const data = await res.json()
+      if (res.status === 201) {
+          // console.log(data.title)
+          // console.log(journalEntries)
+          setJournalEntries([...journalEntries, data])
+          console.log(journalEntries)
+
+          // code to update front end
+      }
+  }
 
   return (
     <Router>
@@ -59,8 +83,9 @@ function App() {
         /> : 
         <AuthHomePage
         invalidateToken = { invalidateToken }
-        token = {token}
-        updFrontEndJournals = {updFrontEndJournals}
+        addEntry = { addEntry }
+        onTitleChange={value => setTitle(value)}
+        onBodyChange={value => setBody(value)}
         />}
         </Route>
       </Switch>

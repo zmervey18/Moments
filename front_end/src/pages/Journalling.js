@@ -3,38 +3,12 @@ import { RiCloseCircleFill } from 'react-icons/ri'
 import { MdAddAPhoto} from 'react-icons/md'
 import { Link} from 'react-router-dom'
 import { useHistory } from "react-router-dom";
-import { useState } from 'react'
 
-const Journalling = ({closeModal, token, updFrontEndJournals, journalEntries}) => {
-    const [title, setTitle] = useState();
-    const [body, setBody] = useState();
+const Journalling = ({closeModal, onTitleChange,onBodyChange,addEntry}) => {
+
     let history= useHistory();
 
-    //  Post new journal entry
-    const addEntry = async (e) => {
-        e.preventDefault();
-        // Add entry to database
-        const res = await fetch('/entry/', {
-          method: 'POST', 
-          headers: { 
-              'Content-Type': 'application/json',
-              'Authorization': `token ${token}`
-         },
-          body: JSON.stringify({ 
-            title: `${title}`,
-            body: `${body}`,
-            // prompt: `${prompt ? prompt : null}`
-          }),
-        })
-        const data = await res.json()
-        if (res.status === 201) {
-            console.log(data)
-            // updFrontEndJournals([...journalEntries, data])
-            // code to update front end
-        }
-        
-        
-  }
+
 
     function handleClick() {
         history.push("/");
@@ -56,12 +30,12 @@ const Journalling = ({closeModal, token, updFrontEndJournals, journalEntries}) =
                 <div>
                     <label>Title: </label>
                     <input type="textarea" name="textValue" 
-                    onChange={e => setTitle(e.target.value)}/>
+                    onChange={(e) => onTitleChange(e.target.value)}/>
                 </div>
                 <div>
                     <label>Body: </label>
                     <input type="textarea" name="textValue" 
-                    onChange={e => setBody(e.target.value)}/>
+                    onChange={(e) => onBodyChange(e.target.value)}/>
                 </div>
 
                 <div>
@@ -75,10 +49,8 @@ const Journalling = ({closeModal, token, updFrontEndJournals, journalEntries}) =
                 type="submit"
                 text= "Create Moment" 
                 value="Create Moment"
-                
                 />
                 </div>
-
             </form>
 
            
