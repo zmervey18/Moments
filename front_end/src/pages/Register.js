@@ -81,7 +81,7 @@ const Register = ({SignupToLoginModalTransition, closeModal, setToken}) => {
                     ></input>
                 </div>
                 <br/>
-                <div className="formButton">
+                <div className="formButton">                
                 <Button 
                 buttonStyle="btn--red" 
                 type="submit"

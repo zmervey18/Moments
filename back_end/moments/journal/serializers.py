@@ -1,14 +1,22 @@
 from rest_framework import serializers
-from .models import Moment, Prompt
+from .models import Entry, Moment, Prompt
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
+class UserSerializer(serializers.ModelSerializer):
+    entries = serializers.HyperlinkedRelatedField(view_name='entry-detail', many=True, read_only=True)
 
-# class UserSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = User
-#         fields = ['id', 'username', 'email', 'user_photo']
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'email', 'user_photo', 'entries']
+
+class EntrySerializer(serializers.HyperlinkedModelSerializer):
+    owner = serializers.ReadOnlyField(source='owner.username')
+
+    class Meta:
+        model = Entry
+        fields = "__all__"
 
 class MomentSerializer(serializers.HyperlinkedModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')

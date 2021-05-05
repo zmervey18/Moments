@@ -31,7 +31,7 @@ const Login = ({closeModal, LoginToSignupModalTransition, setToken}) => {
         } else {
         setToken(token['token']);
         }
-      }
+    }
     return (
         <div>
             <Link to='/' className='text-link'>  
