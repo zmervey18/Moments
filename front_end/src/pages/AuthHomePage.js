@@ -10,7 +10,7 @@ import GuidedJournalling from '../pages/GuidedJournalling'
 import AddMoments from './AddMoments'
 Modal.setAppElement('#root')
 
-const AuthHomePage = ({invalidateToken}) => {
+const AuthHomePage = ({invalidateToken, addEntry}) => {
     const [journallingModalIsOpen,setJournallingModalIsOpen]=useState(false)
     const [guidedJournallingModalIsOpen,setGuidedJournallingModalIsOpen]=useState(false)
     const [momentsModalIsOpen,setMomentsModalIsOpen]=useState(false)

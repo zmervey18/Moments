@@ -14,13 +14,13 @@ const AuthNavbar = ({invalidateToken}) => {
                         text= "Home" 
                     /> 
                 </Link> 
-                <Link to='/moments'>   
+                <Link to='/browse-moments'>   
                     <Button 
                         buttonStyle="btn--blue" 
                         text= "Moments" 
                     /> 
                 </Link> 
-                <Link to='/journal'>   
+                <Link to='/browse-journal'>   
                     <Button 
                         buttonStyle="btn--blue" 
                         text= "Journal" 
