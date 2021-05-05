@@ -53,12 +53,7 @@ function App() {
       })
       const data = await res.json()
       if (res.status === 201) {
-          // console.log(data.title)
-          // console.log(journalEntries)
           setJournalEntries([...journalEntries, data])
-          console.log(journalEntries)
-
-          // code to update front end
       }
   }
 
@@ -84,8 +79,8 @@ function App() {
         <AuthHomePage
         invalidateToken = { invalidateToken }
         addEntry = { addEntry }
-        onTitleChange={value => setTitle(value)}
-        onBodyChange={value => setBody(value)}
+        onTitleChange={setTitle}
+        onBodyChange={setBody}
         />}
         </Route>
       </Switch>
