@@ -52,7 +52,7 @@ const Login = ({closeModal, LoginToSignupModalTransition, setToken}) => {
                 </div>
 
                 <div>
-                    <input className="modal-form" type="text" name="Password" placeholder="Please enter your password"
+                    <input className="modal-form" type="password" name="Password" placeholder="Please enter your password"
                     onChange={e => setPassword(e.target.value)}
                     ></input>
                 </div>
