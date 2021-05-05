@@ -23,7 +23,8 @@ class MomentSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Moment
-        fields = "__all__"
+        # fields = "__all__"
+        fields = ['pk', 'date', 'description', 'image', 'owner']
 
 class PromptSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:

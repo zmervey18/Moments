@@ -179,3 +179,5 @@ sketch
 !media
 **/media/*
 !/**/media/defaults
+
+.vscode

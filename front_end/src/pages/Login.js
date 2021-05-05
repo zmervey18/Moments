@@ -30,6 +30,7 @@ const Login = ({closeModal, LoginToSignupModalTransition, setToken}) => {
             alert(token['username'] || token['password'])
         } else {
         setToken(token['token']);
+        localStorage.setItem('moments_token', token['token'])
         }
     }
     return (

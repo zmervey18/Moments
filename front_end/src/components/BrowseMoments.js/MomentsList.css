@@ -1,0 +1,18 @@
+.gallery {
+  max-width: 100%;
+}
+
+.gallery-container {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.moment-card {
+  border: 1px solid black;
+  margin: 2rem;
+  padding: 2rem;
+  width: 40%
+}
