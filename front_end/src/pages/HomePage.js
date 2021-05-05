@@ -75,7 +75,7 @@ const SignupToLoginModalTransition = () => {
                 {/* <Link to="/sign_up"> */}
                     <Button 
                     buttonStyle="btn--red" 
-                    text= "Get Journalling" 
+                    text= "Let's go!" 
                     event= {openSignUpModal}
                     />
                 {/* </Link> */}
