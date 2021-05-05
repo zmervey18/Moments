@@ -1,5 +1,6 @@
 import "./BenefitListItem.css";
 import Button from '../Button/Button'
+import {Link} from 'react-router-dom'
 
 const JournallingListItem = ({
   image,
@@ -7,7 +8,8 @@ const JournallingListItem = ({
   alt,
   textClass,
   reverse = false,
-  event
+  event,
+  linkTo
 }) => {
 
   
@@ -21,13 +23,21 @@ const JournallingListItem = ({
       <div className={`${textClass} ${reverse ? "first" : "second"}`}>
 
        <div className="formButton">
+          {linkTo ? 
+                <Link to={linkTo}>
+                <Button 
+                buttonStyle="btn--blue" 
+                text= {subtitle} 
+                />
+                </Link>
+                 : 
                 <Button 
                 buttonStyle="btn--blue" 
                 text= {subtitle} 
                 event={event}
-                // event={guidedJournallingModal}
-                
                 />
+                }
+                
         </div>
         
       </div>

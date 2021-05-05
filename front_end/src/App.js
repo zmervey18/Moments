@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 import AuthHomePage from "./pages/AuthHomePage";
 import { useState } from 'react';
 import HomePage from "./pages/HomePage";
@@ -10,15 +10,25 @@ function App() {
   }
   return (
     <Router>
-      
-      <Route path="/"/>
-      {!token ? 
-      <HomePage
-      setToken = { setToken }
-      /> : 
-      <AuthHomePage
-      invalidateToken = { invalidateToken }
-      />}
+      <Switch>
+        <Route path="/browse-journal">
+        <h1>Hello World</h1>
+        </Route>
+
+        <Route path="/browse-moments">
+        <h1>Hello World</h1>
+        </Route>
+        <Route path="/">
+        {!token ? 
+        <HomePage
+        setToken = { setToken }
+        /> : 
+        <AuthHomePage
+        invalidateToken = { invalidateToken }
+        />}
+        </Route>
+      </Switch>
+
     </Router>
 
    

@@ -21,7 +21,7 @@ const Button = ({
     buttonStyle,
     buttonSize,
     text,
-    event
+    event,
     }) => {
 
     const checkButtonStyle = STYLES.includes(buttonStyle) ? buttonStyle : STYLES[1]

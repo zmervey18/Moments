@@ -3,9 +3,10 @@ import guided from "../../static/guided.svg";
 import freestyle from "../../static/freestyle.svg";
 import browse from "../../static/browse.svg";
 import browse_journal from "../../static/browse_journal.svg";
+import moments from "../../static/moments.svg";
 import "./BenefitListItem.css";
 
-const AlternatingListAuthHomePage = ({journallingModal, guidedJournallingModal}) => {
+const AlternatingListAuthHomePage = ({journallingModal, guidedJournallingModal, momentsModal}) => {
     return (
        
         <div className="BenefitListVerticalContainer">
@@ -29,18 +30,29 @@ const AlternatingListAuthHomePage = ({journallingModal, guidedJournallingModal})
                 />
 
                 <JournallingListItem
+                image={moments}
+                subtitle="Add Moments"
+                alt="Car on a road"
+                textClass="TextContainerRight"
+                event={momentsModal}
+                
+                />
+
+                <JournallingListItem
                 image={browse}
                 subtitle="Browse moments"
                 alt="Man standing in front of a photo album"
-                textClass="TextContainerRight"
+                textClass="TextContainerLeft"
+                reverse={true}
+                linkTo='/browse-moments'
                 />
 
                 <JournallingListItem
                 image={browse_journal}
                 subtitle="Browse Journal Entries"
                 alt="Man facing a page with content"
-                textClass="TextContainerLeft"
-                reverse={true}
+                textClass="TextContainerRight"
+                linkTo='/browse-journal'
                 />
 
                
