@@ -20,12 +20,13 @@ Modal.setAppElement('#root')
 const HomePage = ({setToken}) => {
 const customStyles = {
     content : {
-        top                   : '50%',
-        left                  : '50%',
-        right                 : 'auto',
-        bottom                : 'auto',
-        marginRight           : '-50%',
-        transform             : 'translate(-50%, -50%)'
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        borderRadius: '2rem'
     }
     };
 const [registrationModalIsOpen,setRegistrationModalIsOpen]=useState(false)
@@ -70,7 +71,7 @@ const SignupToLoginModalTransition = () => {
                 alt="Woman pointing at a globe"
                 />
             </div>
-            <div className="Center">
+            <div className="Section5">
                 <h3>Ready to start journalling?</h3>
                 {/* <Link to="/sign_up"> */}
                     <Button 
