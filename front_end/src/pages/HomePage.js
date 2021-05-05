@@ -63,11 +63,13 @@ const SignupToLoginModalTransition = () => {
             />            
             <AlternatingListHomePage />
             <FeatureList />
-            <ImageTile 
-            image={my_universe}
-            title="Document your world"
-            alt="Woman pointing at a globe"
-            />
+            <div className="Section4">
+                <ImageTile 
+                image={my_universe}
+                title="Document your world"
+                alt="Woman pointing at a globe"
+                />
+            </div>
             <div className="Center">
                 <h3>Ready to start journalling?</h3>
                 {/* <Link to="/sign_up"> */}
