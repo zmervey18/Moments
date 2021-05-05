@@ -57,6 +57,7 @@ const MomentsList = () => {
           onRequestClose={clearSelection}
         >
           <MomentsCard
+          key={selection?.pk}
             closeModal={clearSelection}
             moment={selection}
             dispatch={dispatch}
