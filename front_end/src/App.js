@@ -56,13 +56,23 @@ function App() {
           setJournalEntries([...journalEntries, data])
       }
   }
-
+  const deleteEntry = async (entry) => {
+    const id = entry.id
+    const res = await fetch(`/entry/${id}/`, {
+      method: 'DELETE',
+    })
+    if (res.status === 204) {
+      // UI
+      setJournalEntries(journalEntries.filter((c) => c._id !== entry.id))
+    }
+  }
   return (
     <Router>
       <Switch>
         <Route path="/browse-journal">
           <JournalEntries
           journalEntries={journalEntries}
+          onDelete={deleteEntry}
           
           />
         </Route>
