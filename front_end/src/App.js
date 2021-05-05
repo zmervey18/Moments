@@ -13,6 +13,10 @@ function App() {
   const [journalEntries, setJournalEntries] = useState([])
   // const [newJournalEntry, setNewJournalEntry] = useState([])
   // setJournalEntries[...journalEntries, newEntry]
+  
+  const addJournalEntry = (withNewEntry) => {
+    setJournalEntries(withNewEntry)
+  }
 
   // fetch all entries
   useEffect(() => {
@@ -27,46 +31,12 @@ function App() {
     const data = await res.json()
     {(data.length <= 1) ? 
       setJournalEntries(data) : setJournalEntries([...data])}
+    console.log(data)
     return data
     }
     if (token){fetchEntries()}
   }, [token])
-  
-//  Post new journal entry
- async function addEntry(entry, token) {
-  return fetch('/entry/', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `token ${token}`,
-      'title': `${entry.title}`,
-      'body': `${entry.body}`,
-      'prompt': `${(prompt) ? prompt : null}`
-    },
-    body: JSON.stringify(entry)
-  })
-    .then(data => data.json())
-  }
 
-
-  // const handleSubmit = async e => {
-  //   e.preventDefault();
-  //   const token = await loginUser({
-  //     username,
-  //     password
-  //   });
-  // }
-  // addentry
-//  const addEntry=async ()=>{
-//   const res = await fetch('/entry/', {
-//     method: 'POST',
-//     headers: {
-//       'Content-type': 'application/json',
-//       'Authorization': `token ${token}`
-//     },
-//     body: JSON.stringify(credentials)
-// })
-//  }
 
   return (
     <Router>
@@ -89,7 +59,7 @@ function App() {
         /> : 
         <AuthHomePage
         invalidateToken = { invalidateToken }
-        addEntry = {addEntry}
+        token = {token}
         />}
         </Route>
       </Switch>
