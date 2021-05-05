@@ -2,7 +2,7 @@ import logo from './../../static/logo_with_text.svg'
 import { Link } from 'react-router-dom'
 import Button from './../Button/Button'
 
-const AuthNavbar = () => {
+const AuthNavbar = ({invalidateToken}) => {
     return (
         <div>
             <nav className="navBar">
@@ -25,6 +25,13 @@ const AuthNavbar = () => {
                         buttonStyle="btn--blue" 
                         text= "Journal" 
                     /> 
+                </Link>
+                <Link to='/'>
+                <Button
+                buttonStyle="btn--blue"
+                event={invalidateToken}
+                text="Sign out"
+                />
                 </Link>   
             </div>
             </nav>
