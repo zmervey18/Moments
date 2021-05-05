@@ -17,28 +17,22 @@ code {
 .tester {
   background-color: red;
 }
-.Center {
-  text-align: center;
-  margin: auto;
-  max-width: 400px;
-}
 
 /* Modals */
-.closeModalIcon {
+/* .closeModalIcon {
   cursor: pointer;
   max-height: 50px;
-}
-.modal {
-  max-height: 500px;
-  max-width: 500px;
-}
-.formButton { 
+  color: green;
+} */
+
+/* .formButton { 
   margin: auto;
   display: flex;
-}
+} */
+
 h3 {
   font-family: "Fredoka One", cursive;
-  font-size: 30px;
+  font-size: 2rem;
 }
 
 /* links */
@@ -46,3 +40,26 @@ h3 {
   color: inherit;
   text-decoration: inherit;
 }
+
+/* .modal-form {
+  text-align: center;
+  display: block;
+  margin: auto;
+  margin-top: 1rem;
+  width: 15rem;
+  padding: 1rem;
+  border-radius: 50px;
+  border: none;
+  background-color: var(--blue);
+  transition: background 1s ease;
+  font-size: 1rem;
+  color: white;
+}
+
+.modal-form::placeholder {
+  color: white;
+}
+
+.modal-form:hover {
+  background-color: var(--red);
+} */
