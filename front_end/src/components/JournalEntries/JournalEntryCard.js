@@ -1,16 +1,11 @@
 import React from 'react'
 import journal from '../../static/journal.svg'
 
-const JournalEntryCard = ({journalEntries}) => {
+const JournalEntryCard = ({journalEntries, id, onDelete, body, title}) => {
     return (
-        <div>
-            {journalEntries}
-            <h3>Title</h3>
-            <p>Date:</p>
-            <p>Prompt</p>
-            <p>Journal entry:</p>
-            <img src={journal}/>
-            
+        <div className="journal-entry-card">
+            <p>{title}</p>
+            <p>{body}</p>
         </div>
     )
 }

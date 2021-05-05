@@ -1,14 +1,18 @@
 import React from 'react'
 import JournalEntryCard from './JournalEntryCard'
 
-const JournalEntryList = ({journalEntries}) => {
+const JournalEntryList = ({journalEntries, onDelete}) => {
     return (
         <div>
+            {(journalEntries.length > 0) ?
+            journalEntries.map(entry => (
             <JournalEntryCard
-            journalEntries={journalEntries}/>
-            <JournalEntryCard/>
-            <JournalEntryCard/>
-            <JournalEntryCard/>
+            key={entry._id}
+            id={entry._id}
+            onDelete={onDelete}
+            body={entry.body}
+            title={entry.title}/>))
+            : ("No entries") }
         </div>
     )
 }
