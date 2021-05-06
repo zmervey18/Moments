@@ -34,6 +34,8 @@ const MomentsList = () => {
       bottom: "auto",
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
+      borderRadius: '2rem',
+      backgroundColor: '#f1faee'
     },
   };
 
