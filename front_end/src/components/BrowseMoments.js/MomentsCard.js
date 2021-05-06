@@ -26,10 +26,12 @@ const MomentsCard = ({ moment, dispatch }) => {
   return (
     <>
     {moment.noMoments ?
-    <div className="moment-card-no-moment">
-      <div className="moment-text">
-        <h3>{moment.description}</h3>
-      </div> 
+    <div className="moment-no-moment-container">
+      <div className="moment-card-no-moment">
+        <div className="moment-text">
+          <h3>{moment.description}</h3>
+        </div> 
+      </div>
     </div>
     : 
     <div
