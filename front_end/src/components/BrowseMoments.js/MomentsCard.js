@@ -2,6 +2,9 @@ import React from "react";
 import { SELECT_MOMENT, DELETE_MOMENT } from "./MomentsTypes";
 import Icon from "../Icon/Icon";
 const MomentsCard = ({ moment, dispatch }) => {
+  if (!moment) {
+    return null;
+  }
   const deleteCard = async () => {
     const pk = moment.pk;
     dispatch({ type: DELETE_MOMENT, payload: pk });
