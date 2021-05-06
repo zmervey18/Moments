@@ -2,10 +2,6 @@ import React from "react";
 import { SELECT_MOMENT, DELETE_MOMENT } from "./MomentsTypes";
 import Icon from "../Icon/Icon";
 const MomentsCard = ({ moment, dispatch }) => {
-  if (!moment) {
-    return null;
-  }
-
   const deleteCard = async () => {
     const pk = moment.pk;
     dispatch({ type: DELETE_MOMENT, payload: pk });
@@ -25,6 +21,14 @@ const MomentsCard = ({ moment, dispatch }) => {
   };
 
   return (
+    <>
+    {moment.noMoments ?
+    <div className="moment-card-no-moment">
+      <div className="moment-text">
+        <h3>{moment.description}</h3>
+      </div> 
+    </div>
+    : 
     <div
       className="moment-card"
       onClick={() => dispatch({ type: SELECT_MOMENT, payload: moment })}
@@ -37,7 +41,9 @@ const MomentsCard = ({ moment, dispatch }) => {
       </div>
 
       <img src={moment.image} alt="" className="moment-image" />
-    </div>
+    </div>}
+    </>
+    
   );
 };
 

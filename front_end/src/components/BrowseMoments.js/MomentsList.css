@@ -28,7 +28,21 @@
     "moment-text"
     "moment-image";
 }
-
+.moment-card-no-moment {
+  background-image: linear-gradient(45deg, #c9dbdc 0%, #FFFFFF 100%);
+  border: 1rem solid #1d3557;
+  border-radius: 2rem;
+  padding: 2rem;
+  margin:auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 300px;
+  display: grid;
+  gap: 0px 0px;
+  grid-template-areas:
+    "moment-text"
+    "moment-image";
+}
 .moment-image {
   grid-area: moment-image;
   width: 300px;
@@ -39,6 +53,7 @@
   font-size: 1.2rem;
   border: none;
   margin: 1rem 0 1rem 0.5rem;
+  text-align: center;
 }
 
 .photo-icon {
