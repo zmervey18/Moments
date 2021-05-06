@@ -8,7 +8,8 @@ const STYLES = [
     "btn--yellow",
     "btn--red",
     "btn--green",
-    "btn--icon"
+    "btn--icon",
+    "btn--darkblue"
 ]
 
 const SIZES = [

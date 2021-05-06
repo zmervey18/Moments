@@ -9,6 +9,8 @@ Lionel Smith, Kashan Sheikh, Ozan Caglar and Zeynep Yanar
 
 ## Operating instructions:
 
+### BACKEND
+
 ### To install pipenv
 pip install pipenv  **# to install dependencies and activate env**\
 pipenv install  **# from back_end**\
@@ -24,3 +26,8 @@ python manage.py createsuperuser  **# from back_end/moments**
 ### To create prompts into your backend
 ***You will lose anything already in your journal tables***\
 python manage.py loaddata journal **# from back_end/moments**
+
+
+### FRONTEND
+
+npm install **# from main folder and then from front_end**
