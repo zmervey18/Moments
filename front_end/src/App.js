@@ -93,6 +93,7 @@ function App() {
         setToken = { setToken }
         /> : 
         <AuthHomePage
+        token = {token}
         invalidateToken = { invalidateToken }
         addEntry = { addEntry }
         onTitleChange={setTitle}

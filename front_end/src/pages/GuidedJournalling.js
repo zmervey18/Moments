@@ -4,7 +4,7 @@ import { MdAddAPhoto} from 'react-icons/md'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 
-const GuidedJournalling = ({closeModal, addEntry}) => {
+const GuidedJournalling = ({closeModal, addEntry, prompts}) => {
     return (
         <div>
             <Link to='/' className='text-link'>  
@@ -19,7 +19,7 @@ const GuidedJournalling = ({closeModal, addEntry}) => {
 
             <form>
                 <div>
-                    <label>What is something you are grateful for today?</label>
+                    <label>{prompts[Math.floor((Math.random() * prompts.length))].prompt}</label>
                     <input type="textarea" name="textValue"/>
                 </div>
 

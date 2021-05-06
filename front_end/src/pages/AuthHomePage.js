@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Modal from 'react-modal'
 import AuthNavbar from '../components/Header/AuthNavbar'
 import Footer from '../components/Footer/Footer'
@@ -10,11 +10,11 @@ import GuidedJournalling from '../pages/GuidedJournalling'
 import AddMoments from './AddMoments'
 Modal.setAppElement('#root')
 
-const AuthHomePage = ({invalidateToken, addEntry, onTitleChange, onBodyChange}) => {
+const AuthHomePage = ({invalidateToken, addEntry, onTitleChange, onBodyChange, token}) => {
     const [journallingModalIsOpen,setJournallingModalIsOpen]=useState(false)
     const [guidedJournallingModalIsOpen,setGuidedJournallingModalIsOpen]=useState(false)
     const [momentsModalIsOpen,setMomentsModalIsOpen]=useState(false)
-
+    const [prompts, setPrompts] = useState([])
 
     const openJournallingModal = () => {
         setJournallingModalIsOpen(true)
@@ -36,7 +36,24 @@ const AuthHomePage = ({invalidateToken, addEntry, onTitleChange, onBodyChange}) 
     const closeMomentsModal = () => {
         setMomentsModalIsOpen(false)
     }
-
+      // fetch all entries
+    useEffect(() => {
+        const fetchPrompts = async () => {
+        const res = await fetch('/prompt/', {
+            method: 'GET',
+            headers: {
+            'Content-type': 'application/json',
+            'Authorization': `token ${token}`
+            },
+        })
+        const data = await res.json()
+        {(data.length <= 1) ? 
+        setPrompts(data) : setPrompts([...data])}
+        console.log(data)
+        return data
+        }
+        if (token){fetchPrompts()}
+    }, [token])
     const customStyles = {
     content : {
         top                   : '50%',
@@ -77,6 +94,7 @@ const AuthHomePage = ({invalidateToken, addEntry, onTitleChange, onBodyChange}) 
             <div className="modal">
             <Modal style={customStyles} isOpen={guidedJournallingModalIsOpen} onRequestClose={closeGuidedJournallingModal}>
                 <GuidedJournalling 
+                prompts = {prompts}
                 modalOpen = {guidedJournallingModalIsOpen}
                 closeModal = {closeGuidedJournallingModal}
                 />
