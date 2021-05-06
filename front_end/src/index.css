@@ -14,8 +14,8 @@ code {
     monospace;
 }
 
-.tester {
-  background-color: red;
+.preview {
+  max-width:200px;
 }
 
 /* Modals */

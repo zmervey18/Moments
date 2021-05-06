@@ -47,7 +47,7 @@ function MomentsForm({ id }) {
             setPreview(URL.createObjectURL(e.target.files[0]));
           }}
         />
-        <img src={preview} alt="" />
+        <img src={preview} className="preview" alt="" />
       </div>
 
       <div className="formButton">

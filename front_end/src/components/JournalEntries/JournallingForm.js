@@ -38,7 +38,7 @@ function JournallingForm({id, prompt}) {
             <input className="entry-attach" type="file" name="image" id="image" onChange={(e) => {
             setPreview(URL.createObjectURL(e.target.files[0]));
           }} />
-            <img src={preview} alt="" />
+            <img src={preview} className="preview" alt="" />
             <div className="formButton">
                 <Button 
                 buttonStyle="btn--red" 
