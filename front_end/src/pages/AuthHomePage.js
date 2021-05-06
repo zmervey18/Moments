@@ -49,7 +49,6 @@ const AuthHomePage = ({invalidateToken, addEntry, onTitleChange, onBodyChange, t
         const data = await res.json()
         {(data.length <= 1) ? 
         setPrompts(data) : setPrompts([...data])}
-        console.log(data)
         return data
         }
         if (token){fetchPrompts()}

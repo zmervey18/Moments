@@ -3,10 +3,12 @@ import Footer from '../components/Footer/Footer'
 import AuthNavbar from '../components/Header/AuthNavbar'
 import JournalEntryList from '../components/JournalEntries/JournalEntryList'
 
-const JournalEntries = ({onDelete, journalEntries}) => {
+const JournalEntries = ({onDelete, journalEntries, invalidateToken}) => {
     return (
         <div>
-            <AuthNavbar/>
+            <AuthNavbar
+            invalidateToken= { invalidateToken }
+            />
 
             <JournalEntryList
             onDelete={onDelete}

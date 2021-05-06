@@ -79,6 +79,7 @@ function App() {
           <JournalEntries
           journalEntries={journalEntries}
           onDelete={deleteEntry}
+          invalidateToken = {invalidateToken}
           />
           }
         </Route>
