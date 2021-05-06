@@ -51,19 +51,49 @@ const AuthHomePage = ({invalidateToken, addEntry, onTitleChange, onBodyChange, t
         return data}
         if (token){fetchPrompts()}
     }, [token])
-    const customStyles = {
-    content : {
-        top                   : '50%',
-        left                  : '50%',
-        right                 : 'auto',
-        bottom                : 'auto',
-        marginRight           : '-50%',
-        transform             : 'translate(-50%, -50%)',
-        borderRadius: '2rem',
-        width: '30rem',
-        height: '36rem'
+// Freestyle Journalling Modal
+    const customStylesFreestyle = {
+        content : {
+            top                   : '50%',
+            left                  : '50%',
+            right                 : 'auto',
+            bottom                : 'auto',
+            marginRight           : '-50%',
+            transform             : 'translate(-50%, -50%)',
+            borderRadius: '2rem',
+            width: '30rem',
+            height: '36rem'
+        }
     }
-    };
+// Guided Journalling Modal
+    const customStylesGuided = {
+        content : {
+            top                   : '50%',
+            left                  : '50%',
+            right                 : 'auto',
+            bottom                : 'auto',
+            marginRight           : '-50%',
+            transform             : 'translate(-50%, -50%)',
+            borderRadius: '2rem',
+            width: '30rem',
+            height: '20rem'
+        }
+    }
+// Moments Modal
+    const customStylesMoments = {
+        content : {
+            top                   : '50%',
+            left                  : '50%',
+            right                 : 'auto',
+            bottom                : 'auto',
+            marginRight           : '-50%',
+            transform             : 'translate(-50%, -50%)',
+            borderRadius: '2rem',
+            width: '30rem',
+            height: '17rem'
+        }
+    }
+    ;
 
     return (
         <div>
@@ -79,7 +109,7 @@ const AuthHomePage = ({invalidateToken, addEntry, onTitleChange, onBodyChange, t
 
              {/* Setting up modal for journalling */}
             <div className="modal">
-            <Modal style={customStyles} isOpen={journallingModalIsOpen} onRequestClose={closeJournallingModal}>
+            <Modal style={customStylesFreestyle} isOpen={journallingModalIsOpen} onRequestClose={closeJournallingModal}>
                 <Journalling 
                 modalOpen = {journallingModalIsOpen}
                 closeModal = {closeJournallingModal}
@@ -93,7 +123,7 @@ const AuthHomePage = ({invalidateToken, addEntry, onTitleChange, onBodyChange, t
 
             {/* Setting up modal for guided journalling */}
             <div className="modal">
-            <Modal style={customStyles} isOpen={guidedJournallingModalIsOpen} onRequestClose={closeGuidedJournallingModal}>
+            <Modal style={customStylesGuided} isOpen={guidedJournallingModalIsOpen} onRequestClose={closeGuidedJournallingModal}>
                 <GuidedJournalling 
                 prompts = {prompts}
                 modalOpen = {guidedJournallingModalIsOpen}
@@ -104,7 +134,7 @@ const AuthHomePage = ({invalidateToken, addEntry, onTitleChange, onBodyChange, t
 
             {/* Setting up modal for adding moments */}
             <div className="modal">
-            <Modal style={customStyles} isOpen={momentsModalIsOpen} onRequestClose={closeMomentsModal}>
+            <Modal style={customStylesMoments} isOpen={momentsModalIsOpen} onRequestClose={closeMomentsModal}>
                 <AddMoments
                 modalOpen = {momentsModalIsOpen}
                 closeModal = {closeMomentsModal}
