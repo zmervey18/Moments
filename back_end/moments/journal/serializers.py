@@ -11,12 +11,27 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ['id', 'username', 'email', 'user_photo', 'entries']
 
+class PromptSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Prompt
+        fields = "__all__"
+
 class EntrySerializer(serializers.HyperlinkedModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
+    # prompt = PromptSerializer(many=False)
 
     class Meta:
         model = Entry
         fields = ['pk', 'date', 'title', 'body', 'image', 'owner', 'prompt']
+
+class EntryReadSerializer(serializers.HyperlinkedModelSerializer):
+    owner = serializers.ReadOnlyField(source='owner.username')
+    prompt = serializers.ReadOnlyField(source='prompt.prompt')
+
+    class Meta:
+        model = Entry
+        fields = ['pk', 'date', 'title', 'body', 'image', 'owner', 'prompt']
+
 
 class MomentSerializer(serializers.HyperlinkedModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
@@ -24,8 +39,3 @@ class MomentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Moment
         fields = ['pk', 'date', 'description', 'image', 'owner']
-
-class PromptSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Prompt
-        fields = "__all__"
