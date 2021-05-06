@@ -22,8 +22,7 @@ function JournallingForm({id, prompt}) {
             Authorization: `token ${token}`,
           },
         });
-        const data = await res.json();
-        console.log(data)
+        await res.json();
         entryForm.reset()
         history.push("/browse-journal");
       }
