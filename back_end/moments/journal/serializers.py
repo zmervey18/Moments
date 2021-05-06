@@ -16,14 +16,14 @@ class EntrySerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Entry
-        fields = "__all__"
+        fields = ['pk', 'date', 'title', 'body', 'image', 'owner', 'prompt']
 
 class MomentSerializer(serializers.HyperlinkedModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
         model = Moment
-        fields = "__all__"
+        fields = ['pk', 'date', 'description', 'image', 'owner']
 
 class PromptSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
