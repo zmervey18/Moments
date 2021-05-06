@@ -38,3 +38,13 @@
     margin-bottom: 1rem;
     cursor: pointer;
 }
+
+.moment-text {
+    font-size: 1.2rem;
+    border: none;
+    margin: 1rem 0 1rem 0;
+}
+
+.photo-icon {
+    margin-right: 0.4rem;
+}
