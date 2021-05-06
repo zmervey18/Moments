@@ -47,10 +47,8 @@ const AuthHomePage = ({invalidateToken, addEntry, onTitleChange, onBodyChange, t
             },
         })
         const data = await res.json()
-        {(data.length <= 1) ? 
-        setPrompts(data) : setPrompts([...data])}
-        return data
-        }
+        setPrompts([...data])
+        return data}
         if (token){fetchPrompts()}
     }, [token])
     const customStyles = {
@@ -82,6 +80,7 @@ const AuthHomePage = ({invalidateToken, addEntry, onTitleChange, onBodyChange, t
                 <Journalling 
                 modalOpen = {journallingModalIsOpen}
                 closeModal = {closeJournallingModal}
+                token = { token }
                 onTitleChange = {onTitleChange}
                 onBodyChange = {onBodyChange}
                 addEntry = {addEntry}
