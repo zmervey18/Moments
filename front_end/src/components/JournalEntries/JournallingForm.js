@@ -1,24 +1,3 @@
-// const addEntry = async (e) => {
-//     e.preventDefault();
-//     // Add entry to database
-//     const res = await fetch('/entry/', {
-//       method: 'POST', 
-//       headers: { 
-//           'Content-Type': 'application/json',
-//           'Authorization': `token ${token}`
-//      },
-//       body: JSON.stringify({ 
-//         title: `${title}`,
-//         body: `${body}`,
-//         // prompt: `${prompt ? prompt : null}`
-//       }),
-//     })
-//     const data = await res.json()
-//     if (res.status === 201) {
-//         setJournalEntries([...journalEntries, data])
-//     }
-// }
-
 import Button from '../Button/Button'
 import { useHistory } from "react-router-dom";
 

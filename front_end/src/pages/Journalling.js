@@ -3,7 +3,7 @@ import { Link} from 'react-router-dom'
 
 import JournallingForm from "../components/JournalEntries/JournallingForm"
 
-const Journalling = ({closeModal, onTitleChange,onBodyChange,addEntry}) => {
+const Journalling = ({closeModal}) => {
 
     return (
         <div>
@@ -20,33 +20,6 @@ const Journalling = ({closeModal, onTitleChange,onBodyChange,addEntry}) => {
             <JournallingForm 
             id = {12490}
             />
-
-            {/* <form onSubmit={addEntry}>
-                <div>
-                    <label>Title: </label>
-                    <input type="textarea" name="textValue" 
-                    onChange={(e) => onTitleChange(e.target.value)}/>
-                </div>
-                <div>
-                    <label>Body: </label>
-                    <input type="textarea" name="textValue" 
-                    onChange={(e) => onBodyChange(e.target.value)}/>
-                </div>
-
-                <div>
-                    <h5>Add an image to create your moment:</h5>
-                    <MdAddAPhoto/><input type="file" name="textValue"/>
-                </div>
-
-                <div className="formButton">
-                <Button 
-                buttonStyle="btn--red" 
-                type="submit"
-                text= "Create Moment" 
-                value="Create Moment"
-                />
-                </div>
-            </form> */}
 
            
         </div>
