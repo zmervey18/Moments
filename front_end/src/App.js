@@ -80,12 +80,15 @@ function App() {
           <JournalEntries
           journalEntries={journalEntries}
           onDelete={deleteEntry}
+          invalidateToken = {invalidateToken}
           />
           }
         </Route>
 
         <Route path="/browse-moments">
-          <BrowseMoments />
+          <BrowseMoments 
+          invalidateToken = {invalidateToken}
+          />
         </Route>
         
         <Route path="/">
