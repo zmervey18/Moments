@@ -38,7 +38,7 @@ const MomentsCard = ({ moment, dispatch }) => {
       className="moment-card"
       onClick={() => dispatch({ type: SELECT_MOMENT, payload: moment })}
     >
-      <Icon className="deckIcon" event={(e) => onDeleteClick(e)} />
+      
       <div className="moment-text">
         <h3>{moment.date}</h3>
         <br />
@@ -46,7 +46,9 @@ const MomentsCard = ({ moment, dispatch }) => {
       </div>
 
       <img src={moment.image} alt="" className="moment-image" />
-    </div>}
+      <Icon className="deckIcon" event={(e) => onDeleteClick(e)} />
+    </div>
+    }
     </>
     
   );
