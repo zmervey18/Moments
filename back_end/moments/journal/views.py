@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets, permissions
 
-from .serializers import EntrySerializer, MomentSerializer, PromptSerializer, UserSerializer
+from .serializers import EntrySerializer, EntryReadSerializer, MomentSerializer, PromptSerializer, UserSerializer
 from .models import Entry, Moment, Prompt
 
 from django.contrib.auth import get_user_model
@@ -46,6 +46,12 @@ class EntryViewSet(viewsets.ModelViewSet):
     permission_classes = [
         IsOwner
     ]
+
+
+    def get_serializer_class(self):
+        if self.request.method in ['GET']:
+            return EntryReadSerializer
+        return EntrySerializer
 
     def get_queryset(self):
         user = self.request.user

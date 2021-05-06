@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import JournallingForm from "../components/JournalEntries/JournallingForm"
 
 const GuidedJournalling = ({closeModal, prompts}) => {
-    const prompt = prompts[Math.floor((Math.random() * prompts.length))].prompt;
+    const promptObj = prompts[Math.floor((Math.random() * prompts.length))]
+    const prompt = promptObj.prompt;
     return (
         <div>
             <Link to='/' className='text-link'>  
@@ -17,13 +18,13 @@ const GuidedJournalling = ({closeModal, prompts}) => {
             </div>
 
 
-            {/* <div>
+            <div>
                 <label>{prompt}</label>
-            </div> */}
+            </div>
 
             <JournallingForm 
             id = {12490}
-            prompt = {prompt}
+            prompt = {promptObj}
             />
 
            
