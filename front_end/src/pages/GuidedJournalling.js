@@ -14,11 +14,11 @@ const GuidedJournalling = ({closeModal, prompts}) => {
             </Link>
 
             <div>
-                <h3>Guided Journalling</h3>
+                <h3 className="modal-title">Guided Journalling</h3>
             </div>
 
 
-            <div>
+            <div className="guided-prompt">
                 <label>{prompt}</label>
             </div>
 
