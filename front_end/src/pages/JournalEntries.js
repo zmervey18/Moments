@@ -18,7 +18,6 @@ const JournalEntries = ({onDelete, invalidateToken, setJournalEntries, journalEn
         })
         const data = await res.json()
         setJournalEntries([...data])
-        console.log(data)
         return data
         }
         fetchEntries()
