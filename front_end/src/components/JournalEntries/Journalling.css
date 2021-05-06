@@ -62,9 +62,7 @@
     /* display: flex; */
     
 }
-.deckIcon{
-    max-width: 50px;
-}
+
 .gallery {
     /* overflow: hidden; */
     /* display: flex; */
@@ -79,6 +77,7 @@
     justify-content: space-evenly;
     width: 70%;
     margin: auto;
+    text-align: center;
     /* background-color: white; */
   }
 .journal-text {
