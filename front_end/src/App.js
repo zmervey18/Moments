@@ -10,6 +10,7 @@ function App() {
   const [journalEntries, setJournalEntries] = useState([])
   const [token, setToken] = useState();
   const invalidateToken = () => {
+    localStorage.removeItem('moments_token')
     setToken(false)
   }
   // const [newJournalEntry, setNewJournalEntry] = useState([])
