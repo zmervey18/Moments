@@ -82,6 +82,7 @@ const AuthHomePage = ({invalidateToken, addEntry, onTitleChange, onBodyChange, t
                 <Journalling 
                 modalOpen = {journallingModalIsOpen}
                 closeModal = {closeJournallingModal}
+                token = { token }
                 onTitleChange = {onTitleChange}
                 onBodyChange = {onBodyChange}
                 addEntry = {addEntry}

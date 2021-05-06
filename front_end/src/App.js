@@ -7,55 +7,21 @@ import JournalEntries from "./pages/JournalEntries";
 
 
 function App() {
+  const [journalEntries, setJournalEntries] = useState([])
   const [token, setToken] = useState();
   const invalidateToken = () => {
     setToken(false)
   }
-  const [journalEntries, setJournalEntries] = useState([])
   // const [newJournalEntry, setNewJournalEntry] = useState([])
   // setJournalEntries[...journalEntries, newEntry]
 
-  // fetch all entries
-  useEffect(() => {
-    const fetchEntries = async () => {
-    const res = await fetch('/entry/', {
-        method: 'GET',
-        headers: {
-          'Content-type': 'application/json',
-          'Authorization': `token ${token}`
-        },
-    })
-    const data = await res.json()
-    setJournalEntries([...data])
-    // console.log(data)
-    return data
-    }
-    if (token){fetchEntries()}
-  }, [token])
+
 
   //  Post new journal entry
   const [title, setTitle] = useState();
   const [body, setBody] = useState(); 
-  const addEntry = async (e) => {
-      e.preventDefault();
-      // Add entry to database
-      const res = await fetch('/entry/', {
-        method: 'POST', 
-        headers: { 
-            'Content-Type': 'application/json',
-            'Authorization': `token ${token}`
-       },
-        body: JSON.stringify({ 
-          title: `${title}`,
-          body: `${body}`,
-          // prompt: `${prompt ? prompt : null}`
-        }),
-      })
-      const data = await res.json()
-      if (res.status === 201) {
-          setJournalEntries([...journalEntries, data])
-      }
-  }
+
+  
   const deleteEntry = async (id) => {
     const res = await fetch(`/entry/${id}/`, {
       method: 'DELETE',
@@ -80,6 +46,8 @@ function App() {
           journalEntries={journalEntries}
           onDelete={deleteEntry}
           invalidateToken = {invalidateToken}
+          setJournalEntries = {setJournalEntries}
+          journalEntries={journalEntries}
           />
           }
         </Route>
@@ -98,7 +66,7 @@ function App() {
         <AuthHomePage
         token = {token}
         invalidateToken = { invalidateToken }
-        addEntry = { addEntry }
+        // addEntry = { addEntry }
         onTitleChange={setTitle}
         onBodyChange={setBody}
         />}

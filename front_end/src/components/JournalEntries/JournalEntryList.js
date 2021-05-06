@@ -11,7 +11,9 @@ const JournalEntryList = ({journalEntries, onDelete}) => {
             id={entry.pk}
             onDelete={onDelete}
             body={entry.body}
-            title={entry.title}/>))
+            title={entry.title}
+            image={entry.image}
+            />))
             : ("No entries") }
         </div>
     )
