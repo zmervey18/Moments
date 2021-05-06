@@ -7,8 +7,8 @@ const JournalEntryList = ({journalEntries, onDelete}) => {
             {(journalEntries.length > 0) ?
             journalEntries.map(entry => (
             <JournalEntryCard
-            key={entry.id}
-            id={entry.id}
+            key={entry.pk}
+            id={entry.pk}
             onDelete={onDelete}
             body={entry.body}
             title={entry.title}/>))

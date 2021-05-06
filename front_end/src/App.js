@@ -57,7 +57,7 @@ function App() {
       }
   }
   const deleteEntry = async (entry) => {
-    const id = entry.id
+    const id = entry.pk
     console.log(id)
     const res = await fetch(`/entry/${id}/`, {
       method: 'DELETE',
