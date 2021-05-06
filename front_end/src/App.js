@@ -56,9 +56,7 @@ function App() {
           setJournalEntries([...journalEntries, data])
       }
   }
-  const deleteEntry = async (entry) => {
-    const id = entry.pk
-    console.log(id)
+  const deleteEntry = async (id) => {
     const res = await fetch(`/entry/${id}/`, {
       method: 'DELETE',
       headers: { 
@@ -68,7 +66,7 @@ function App() {
     })
     if (res.status === 204) {
       // UI
-      setJournalEntries(journalEntries.filter((e) => e._id !== entry.id))
+      setJournalEntries(journalEntries.filter((e) => e.pk !== id))
     }
   }
   return (

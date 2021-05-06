@@ -6,10 +6,9 @@ const JournalEntryCard = ({id, onDelete, body, title}) => {
         <div className="journal-entry-card">
             <p>{title}</p>
             <p>{body}</p>
-            <p>{id}</p>
             <Icon 
             className="deckIcon"
-            event={()=>onDelete({id})}
+            event={()=>onDelete(id)}
             />
         </div>
     )
