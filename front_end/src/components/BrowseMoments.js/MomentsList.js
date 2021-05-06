@@ -44,30 +44,41 @@ const MomentsList = () => {
   }
 
   return (
-    <div className="gallery">
-      <div className="gallery-container">
+    <>
+    
+      {moments.length >= 1 ?
+      <div className="gallery">
+        <div className="gallery-container">
         {moments.map((moment) => {
           return (
             <MomentsCard moment={moment} key={moment.pk} dispatch={dispatch} />
           );
         })}
-      </div>
+        </div>
+      
 
-      <div className="modal">
-        <Modal
-          style={customStyles}
-          isOpen={!!selection}
-          onRequestClose={clearSelection}
-        >
-          <MomentsModal
-            key={selection?.pk}
-            closeModal={clearSelection}
-            moment={selection}
-            dispatch={dispatch}
-          />
-        </Modal>
+        <div className="modal">
+          <Modal
+            style={customStyles}
+            isOpen={!!selection}
+            onRequestClose={clearSelection}
+          >
+            <MomentsModal
+              key={selection?.pk}
+              closeModal={clearSelection}
+              moment={selection}
+              dispatch={dispatch}
+            />
+          </Modal>
+        
+        </div>
+      
       </div>
-    </div>
+      :
+      <MomentsCard moment={{description: "No moments to show", noMoments: true}} />
+      }
+        
+    </>
   );
 };
 

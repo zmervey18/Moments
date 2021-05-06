@@ -45,8 +45,50 @@
     cursor: pointer;
 }
 
-.journal-entry {
+/* .journal-entry {
     align-items: center;
     background-color: pink;
     border: 2rem;
+} */
+.card {
+    /* margin-top:-4px; */
+    /* margin-bottom: -5px; */
+    background-image: linear-gradient(45deg, #c9dbdc 0%, #FFFFFF 100%);
+    border: 1rem solid #1d3557;
+    border-radius: 2rem;
+    margin: 2.5rem;
+    padding: 2rem;
+    /* margin-bottom: 3rem; */
+    /* display: flex; */
+    
+}
+
+.gallery {
+    /* overflow: hidden; */
+    /* display: flex; */
+    /* align-items: center; */
+    max-width: 100%;
+    background-image: linear-gradient(to right, #457b9d, #5a94a9, #78adb3, #9cc4bf, #c1dbd0, #c1dbd0, #c1dbd0, #c1dbd0, #9cc4bf, #78adb3, #5a94a9, #457b9d);
+  }
+
+  .gallery-container {
+    /* display: flex; */
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    /* background-color: white; */
+  }
+.journal-text {
+    font-size: 1.2rem;
+    border: none;
+    /* margin: 1rem 0 1rem 0.5rem; */
+    margin: auto;
+}
+.entry-image {
+    margin: auto;
+    border-radius: 2rem;
+    max-width: 300px;
+    max-height: 400px;
 }

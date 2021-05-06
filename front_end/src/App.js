@@ -34,16 +34,13 @@ function App() {
     <Router>
       <Switch>
         <Route path="/browse-journal">
-          {!token ?
-          "Log in"
-          :
           <JournalEntries
           journalEntries={journalEntries}
           onDelete={deleteEntry}
           invalidateToken = {invalidateToken}
           setJournalEntries = {setJournalEntries}
           />
-          }
+          
         </Route>
 
         <Route path="/browse-moments">
