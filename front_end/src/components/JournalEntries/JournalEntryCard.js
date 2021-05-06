@@ -1,9 +1,15 @@
 import React from 'react'
-
-const JournalEntryCard = () => {
+import journal from '../../static/journal.svg'
+import Icon from '../Icon/Icon'
+const JournalEntryCard = ({id, onDelete, body, title}) => {
     return (
-        <div>
-            <h3>Title</h3>
+        <div className="journal-entry-card">
+            <p>{title}</p>
+            <p>{body}</p>
+            <Icon 
+            className="deckIcon"
+            event={()=>onDelete(id)}
+            />
         </div>
     )
 }

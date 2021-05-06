@@ -1,9 +1,19 @@
 import Button from '../components/Button/Button'
 import { RiCloseCircleFill } from 'react-icons/ri'
 import { MdAddAPhoto} from 'react-icons/md'
-import { Link } from 'react-router-dom'
+import { Link} from 'react-router-dom'
+import { useHistory } from "react-router-dom";
 
-const Journalling = ({closeModal}) => {
+const Journalling = ({closeModal, onTitleChange,onBodyChange,addEntry}) => {
+
+    let history= useHistory();
+
+
+
+    function handleClick() {
+        history.push("/");
+    }
+
     return (
         <div>
             <Link to='/' className='text-link'>  
@@ -16,10 +26,16 @@ const Journalling = ({closeModal}) => {
                 <h3>Journalling</h3>
             </div>
 
-            <form>
+            <form onSubmit={addEntry}>
                 <div>
-                    <label>Journal Entry:</label>
-                    <input type="textarea" name="textValue"/>
+                    <label>Title: </label>
+                    <input type="textarea" name="textValue" 
+                    onChange={(e) => onTitleChange(e.target.value)}/>
+                </div>
+                <div>
+                    <label>Body: </label>
+                    <input type="textarea" name="textValue" 
+                    onChange={(e) => onBodyChange(e.target.value)}/>
                 </div>
 
                 <div>
@@ -35,7 +51,6 @@ const Journalling = ({closeModal}) => {
                 value="Create Moment"
                 />
                 </div>
-
             </form>
 
            
