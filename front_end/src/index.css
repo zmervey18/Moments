@@ -14,8 +14,9 @@ code {
     monospace;
 }
 
-
-
+.preview {
+  max-width:200px;
+}
 
 /* Modals */
 /* .closeModalIcon {
