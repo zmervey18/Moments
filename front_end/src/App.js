@@ -85,7 +85,9 @@ function App() {
         </Route>
 
         <Route path="/browse-moments">
-          <BrowseMoments />
+          <BrowseMoments 
+          invalidateToken = {invalidateToken}
+          />
         </Route>
         
         <Route path="/">
