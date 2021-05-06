@@ -7,6 +7,7 @@ const JournalEntryList = ({journalEntries, onDelete}) => {
         <div>
             {(journalEntries.length > 0) ?
             journalEntries.map(entry => (
+            <div className="journal-entry">
             <JournalEntryCard
             key={entry.pk}
             id={entry.pk}
@@ -16,7 +17,8 @@ const JournalEntryList = ({journalEntries, onDelete}) => {
             title={entry.title}
             image={entry.image}
             prompt={entry.prompt}
-            />))
+            />
+            </div>))
             : ("No entries") }
         </div>
     )

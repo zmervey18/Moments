@@ -44,3 +44,9 @@
     margin-bottom: 1rem;
     cursor: pointer;
 }
+
+.journal-entry {
+    align-items: center;
+    background-color: pink;
+    border: 2rem;
+}
