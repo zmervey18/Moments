@@ -2,9 +2,8 @@ import Button from '../components/Button/Button'
 import { RiCloseCircleFill } from 'react-icons/ri'
 import { MdAddAPhoto} from 'react-icons/md'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
 
-const GuidedJournalling = ({closeModal, addEntry, prompts}) => {
+const GuidedJournalling = ({closeModal, prompts}) => {
     return (
         <div>
             <Link to='/' className='text-link'>  
