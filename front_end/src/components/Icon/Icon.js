@@ -1,21 +1,22 @@
 import del from './../../static/Icon_Delete.svg'
-
-const Icon = ({icon, event}) => {
+import './icon.css'
+const Icon = ({event}) => {
     const ElementStyle = {
-        // width: '50%',
         display: 'flex',
         border: 'none',
         backgroundColor: 'transparent',
         cursor: 'pointer',
         margin: 'auto',
+        'font-size': '10px',
+        padding: '5px',
+        'margin-bottom': '-25px',
     }
     return (
         <button
         onClick={event}
-        className='icon_image'
         style={ElementStyle}
         >
-        <img className='icon_image' src={del} alt="delete"/>
+        <img style={{width:'6em'}} src={del} alt="delete"/>
         </button>
     )
 }

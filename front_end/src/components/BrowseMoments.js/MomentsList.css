@@ -50,8 +50,11 @@
 .moment-image {
   grid-area: moment-image;
   max-width: 300px;
+  max-height: 300px;
+  margin: auto;
   border-radius: 2rem;
-  padding-top: 20px;
+  /* padding-top: 20px; */
+  /* padding-bottom: 20px; */
 }
 
 .moment-text {
