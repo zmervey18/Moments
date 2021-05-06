@@ -1,6 +1,7 @@
 import React, { useEffect, useReducer } from "react";
 import Modal from "react-modal";
 import MomentsCard from "./MomentsCard";
+import MomentsForm from "./MomentsForm";
 import "./MomentsList.css";
 
 import { initialState, momentsReducer } from "./MomentsReducer";
@@ -42,6 +43,8 @@ const MomentsList = () => {
 
   return (
     <div className="gallery">
+      <MomentsForm id="momentForm" />
+
       <div className="gallery-container">
         {moments.map((moment) => {
           return (
@@ -69,3 +72,9 @@ const MomentsList = () => {
 };
 
 export default MomentsList;
+
+
+
+
+
+// async function getMoments() {
