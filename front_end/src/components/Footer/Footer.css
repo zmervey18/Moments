@@ -1,13 +1,10 @@
 .footer {
-    /* clear: both; */
-    /* position: relative; */
     height: 150px;
     text-align: center;
-    /* margin-top: 3rem; */
     background-color: #a8dadc;
     width: 100%;
-    /* bottom: 0; */
     overflow: hidden;
+    border-top: 0.5rem solid #1d3557;
 }
 
 .footer h1 {
