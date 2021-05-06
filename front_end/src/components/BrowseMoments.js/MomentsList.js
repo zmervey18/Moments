@@ -5,6 +5,7 @@ import "./MomentsList.css";
 
 import { initialState, momentsReducer } from "./MomentsReducer";
 import { GET_MOMENTS, CLEAR_SELECTION } from "./MomentsTypes";
+import MomentsModal from "./MomentsModal";
 
 const MomentsList = () => {
   const [state, dispatch] = useReducer(momentsReducer, initialState);
@@ -56,7 +57,7 @@ const MomentsList = () => {
           isOpen={!!selection}
           onRequestClose={clearSelection}
         >
-          <MomentsCard
+          <MomentsModal
             key={selection?.pk}
             closeModal={clearSelection}
             moment={selection}
