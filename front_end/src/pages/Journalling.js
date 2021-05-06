@@ -15,7 +15,7 @@ const Journalling = ({closeModal}) => {
             </Link>
 
             <div>
-                <h3 className="modal-text">Journalling</h3>
+                <h3 className="modal-title">Journalling</h3>
             </div>
             <JournallingForm 
             id = {12490}
