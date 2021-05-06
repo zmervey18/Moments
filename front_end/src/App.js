@@ -9,6 +9,7 @@ import JournalEntries from "./pages/JournalEntries";
 function App() {
   const [token, setToken] = useState();
   const invalidateToken = () => {
+    localStorage.removeItem('moments_token')
     setToken(false)
   }
   const [journalEntries, setJournalEntries] = useState([])

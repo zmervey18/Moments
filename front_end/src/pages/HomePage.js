@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Modal from 'react-modal'
 
 
@@ -17,6 +17,39 @@ import Login from './Login'
 Modal.setAppElement('#root')
 
 const HomePage = ({setToken}) => {
+
+    async function loginUser(credentials) {
+        return fetch('/api/auth/login', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(credentials)
+        })
+        .then(data => data.json())
+    }
+
+    
+    useEffect(() => {
+        async function loadUser() {
+            const token = localStorage.getItem('moments_token')
+            if (!token) return;
+    
+            const res = await fetch('/api/auth/account', {
+                headers: {
+                'Authorization': `token ${token}`
+                },
+            })
+            const data = await res.json()
+            if ('id' in data && 'username' in data) {
+                setToken(token)
+            }
+        }
+        
+        loadUser()
+
+    }, [setToken])
+
 const customStyles = {
     content : {
         top: '50%',
