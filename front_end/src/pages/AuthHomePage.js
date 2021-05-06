@@ -58,7 +58,10 @@ const AuthHomePage = ({invalidateToken, addEntry, onTitleChange, onBodyChange, t
         right                 : 'auto',
         bottom                : 'auto',
         marginRight           : '-50%',
-        transform             : 'translate(-50%, -50%)'
+        transform             : 'translate(-50%, -50%)',
+        borderRadius: '2rem',
+        width: '30rem',
+        height: '36rem'
     }
     };
 
