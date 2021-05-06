@@ -27,8 +27,14 @@
     background-color: var(--red);
 }
 
-.modal-text {
+.modal-title {
     text-align: center;
+    font-size: 1.5rem;
+}
+
+.modal-heading {
+    text-align: center;
+    padding: 1rem 0rem 1rem 0rem;
 }
 
 .formButton { 

@@ -1,5 +1,6 @@
 import Button from '../Button/Button'
-import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom"
+import './Journalling.css'
 
 function JournallingForm({id, prompt}) {
     let history= useHistory();
@@ -29,9 +30,9 @@ function JournallingForm({id, prompt}) {
     return (
         
         <form id={id} onSubmit={onSubmit} >
-            <input type="text" name="title" id="title" placeholder="Title"/> <br/>
-            <input type="text" name="body" id="body" placeholder="Body"/> <br/>
-            <input type="file" name="image" id="image"/> <br/>
+            <input className="entry-title" type="text" name="title" id="title" placeholder="Entry title"/>
+            <textarea className="entry-body" type="text" name="body" id="body" placeholder="Write your journal entry here..."/>
+            <input className="entry-attach" type="file" name="image" id="image"/>
             <div className="formButton">
                 <Button 
                 buttonStyle="btn--red" 

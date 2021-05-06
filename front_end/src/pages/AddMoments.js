@@ -2,6 +2,7 @@ import React from 'react'
 import { RiCloseCircleFill } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 import MomentsForm from '../components/BrowseMoments.js/MomentsForm'
+import './Modal.css'
 
 
 const AddMoments = ({closeModal}) => {
@@ -15,7 +16,7 @@ const AddMoments = ({closeModal}) => {
                 </Link>
 
                 <div>
-                    <h3>Add a Moment</h3>
+                    <h3 className="modal-title">Add a Moment</h3>
                 </div>
 
                 <MomentsForm id="addMomentForm" />   

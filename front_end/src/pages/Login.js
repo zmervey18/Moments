@@ -41,7 +41,7 @@ const Login = ({closeModal, LoginToSignupModalTransition, setToken}) => {
                 <RiCloseCircleFill onClick={closeModal}/>
             </div>
             </Link>
-            <div className="modal-text">
+            <div className="modal-heading">
                 <h3>Welcome to Moments</h3>
             </div>
 
@@ -69,7 +69,7 @@ const Login = ({closeModal, LoginToSignupModalTransition, setToken}) => {
             </form>
 
             <div>
-                <h3 className="modal-text">Not signed up yet?</h3>
+                <h3 className="modal-heading">Not signed up yet?</h3>
                 <Link to='/sign-up' style={{textDecoration:"none"}}> 
                 <div className="formButton">
                 <Button 

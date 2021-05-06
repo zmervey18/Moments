@@ -24,13 +24,12 @@ function MomentsForm({ id }) {
   return (
     <form id={id} onSubmit={onSubmit}>
       <div>
-        <label htmlFor="description">Description</label>
-        <input type="text" name="description" id="description" />
+        <input className="entry-title" type="text" name="description" id="description" placeholder="Moment title" />
       </div>
       <div>
-        <h5>Add an image to create your moment:</h5>
-        <MdAddAPhoto />
-        <input type="file" name="image" id="image" />
+        <h5 className="moment-text">Add an image to create your moment</h5>
+        <MdAddAPhoto className="photo-icon"/>
+        <input className="entry-attach" type="file" name="image" id="image" />
       </div>
 
       <div className="formButton">
