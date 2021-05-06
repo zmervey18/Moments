@@ -28,17 +28,40 @@
     "moment-text"
     "moment-image";
 }
-
+.moment-no-moment-container {
+  overflow: hidden;
+  background-image: linear-gradient(to right, #457b9d, #5a94a9, #78adb3, #9cc4bf, #c1dbd0, #c1dbd0, #c1dbd0, #c1dbd0, #9cc4bf, #78adb3, #5a94a9, #457b9d);
+}
+.moment-card-no-moment {
+  background-image: linear-gradient(45deg, #c9dbdc 0%, #FFFFFF 100%);
+  border: 1rem solid #1d3557;
+  border-radius: 2rem;
+  padding: 2rem;
+  margin:auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 300px;
+  display: grid;
+  gap: 0px 0px;
+  grid-template-areas:
+    "moment-text"
+    "moment-image";
+}
 .moment-image {
   grid-area: moment-image;
-  width: 300px;
-  height: 300px;
+  max-width: 300px;
+  max-height: 300px;
+  margin: auto;
+  border-radius: 2rem;
+  /* padding-top: 20px; */
+  /* padding-bottom: 20px; */
 }
 
 .moment-text {
   font-size: 1.2rem;
   border: none;
   margin: 1rem 0 1rem 0.5rem;
+  text-align: center;
 }
 
 .photo-icon {

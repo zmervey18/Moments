@@ -1,25 +1,28 @@
 import React from 'react'
 import JournalEntryCard from './JournalEntryCard'
-
+import './Journalling.css'
 const JournalEntryList = ({journalEntries, onDelete}) => {
-    console.log(journalEntries)
     return (
-        <div>
-            {(journalEntries.length > 0) ?
-            journalEntries.map(entry => (
-            <div className="journal-entry">
-            <JournalEntryCard
-            key={entry.pk}
-            id={entry.pk}
-            onDelete={onDelete}
-            date={entry.date}
-            body={entry.body}
-            title={entry.title}
-            image={entry.image}
-            prompt={entry.prompt}
-            />
-            </div>))
-            : ("No entries") }
+        <div className="gallery">
+            <div className="gallery-container">
+                {(journalEntries.length > 0) ?
+                journalEntries.map(entry => (
+                <div className="journal-entry">
+                <JournalEntryCard
+                key={entry.pk}
+                id={entry.pk}
+                onDelete={onDelete}
+                date={entry.date}
+                body={entry.body}
+                title={entry.title}
+                image={entry.image}
+                prompt={entry.prompt}
+                />
+                </div>))
+                : (<JournalEntryCard
+                    title={"No entries to show"}
+                />) }
+            </div>
         </div>
     )
 }
