@@ -33,9 +33,14 @@
 }
 
 .moment-text {
-  grid-area: moment-text;
-  border-bottom: 1px dotted grey;
-  width: 100%;
+  font-size: 1.2rem;
+  border: none;
+  margin: 1rem 0 1rem 0.5rem;
+}
+
+.photo-icon {
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
 }
 
 .moment-card > h1, h2, h3, h4, h5 {

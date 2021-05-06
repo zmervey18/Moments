@@ -30,6 +30,12 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.guided-prompt {
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 1rem 0.5rem 0 0.5rem;
+}
+
 .entry-body:hover {
     background-color: #c4edee;
 }
@@ -37,14 +43,4 @@
 .entry-attach {
     margin-bottom: 1rem;
     cursor: pointer;
-}
-
-.moment-text {
-    font-size: 1.2rem;
-    border: none;
-    margin: 1rem 0 1rem 0;
-}
-
-.photo-icon {
-    margin-right: 0.4rem;
 }
