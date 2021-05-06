@@ -17,8 +17,6 @@ import Login from './Login'
 Modal.setAppElement('#root')
 
 const HomePage = ({setToken}) => {
-
-
     
     useEffect(() => {
         async function loadUser() {
@@ -87,7 +85,7 @@ const SignupToLoginModalTransition = () => {
             <AlternatingListHomePage />
             <FeatureList />
             <div className="Section4">
-                <ImageTile 
+                <ImageTile
                 image={my_universe}
                 title="Document your world"
                 alt="Woman pointing at a globe"
