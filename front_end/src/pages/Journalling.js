@@ -1,13 +1,9 @@
-import Button from '../components/Button/Button'
 import { RiCloseCircleFill } from 'react-icons/ri'
-import { MdAddAPhoto} from 'react-icons/md'
 import { Link} from 'react-router-dom'
 
 import JournallingForm from "../components/JournalEntries/JournallingForm"
 
 const Journalling = ({closeModal, onTitleChange,onBodyChange,addEntry}) => {
-
-
 
     return (
         <div>

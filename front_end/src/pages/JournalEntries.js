@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect } from 'react'
 import Footer from '../components/Footer/Footer'
 import AuthNavbar from '../components/Header/AuthNavbar'
 import JournalEntryList from '../components/JournalEntries/JournalEntryList'
@@ -22,7 +22,7 @@ const JournalEntries = ({onDelete, invalidateToken, setJournalEntries, journalEn
         return data
         }
         fetchEntries()
-    }, [])
+    },[setJournalEntries])
     return (
         <div>
             <AuthNavbar

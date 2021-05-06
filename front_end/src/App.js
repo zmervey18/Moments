@@ -1,6 +1,6 @@
 import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 import AuthHomePage from "./pages/AuthHomePage";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import HomePage from "./pages/HomePage";
 import BrowseMoments from "./pages/BrowseMoments";
 import JournalEntries from "./pages/JournalEntries";
@@ -16,13 +16,7 @@ function App() {
   // const [newJournalEntry, setNewJournalEntry] = useState([])
   // setJournalEntries[...journalEntries, newEntry]
 
-
-
-  //  Post new journal entry
-  const [title, setTitle] = useState();
-  const [body, setBody] = useState(); 
-
-  
+  // delete entry  
   const deleteEntry = async (id) => {
     const res = await fetch(`/entry/${id}/`, {
       method: 'DELETE',
@@ -48,7 +42,6 @@ function App() {
           onDelete={deleteEntry}
           invalidateToken = {invalidateToken}
           setJournalEntries = {setJournalEntries}
-          journalEntries={journalEntries}
           />
           }
         </Route>
@@ -67,9 +60,6 @@ function App() {
         <AuthHomePage
         token = {token}
         invalidateToken = { invalidateToken }
-        // addEntry = { addEntry }
-        onTitleChange={setTitle}
-        onBodyChange={setBody}
         />}
         </Route>
       </Switch>

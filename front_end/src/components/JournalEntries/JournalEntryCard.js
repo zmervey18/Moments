@@ -1,5 +1,4 @@
 import React from 'react'
-import journal from '../../static/journal.svg'
 import Icon from '../Icon/Icon'
 const JournalEntryCard = ({id, onDelete, body, title, image}) => {
     return (
