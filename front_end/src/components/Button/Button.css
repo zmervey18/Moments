@@ -39,6 +39,23 @@
   color: var(--powderblue);
 }
 
+.btn--darkblue {
+  background-color: var(--darkblue);
+  color: var(--powderblue);
+  /* border: 2px solid var(--darkblue); */
+  border-radius: 4rem;
+  font-family: "Caveat", cursive;
+  font-size: 2rem;
+  padding: 2rem;
+  margin-right: 1rem;
+  transition: background 0.5s ease-out, color 0.5s ease-out
+}
+
+.btn--darkblue:hover {
+  background-color: var(--red);
+  color: var(--powderblue);
+}
+
 .btn--red {
   background-color: var(--red);
   color: var(--white);

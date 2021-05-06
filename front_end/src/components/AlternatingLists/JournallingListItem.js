@@ -22,7 +22,7 @@ const JournallingListItem = ({
       ></img>
       <div className={`${textClass} ${reverse ? "first" : "second"}`}>
 
-       <div className="formButton">
+       {/* <div className="formButton">
           {linkTo ? 
                 <Link to={linkTo}>
                 <Button 
@@ -38,7 +38,7 @@ const JournallingListItem = ({
                 />
                 }
                 
-        </div>
+        </div> */}
         
       </div>
     </div>

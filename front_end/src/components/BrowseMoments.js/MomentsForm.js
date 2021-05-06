@@ -1,15 +1,15 @@
 import React from 'react'
 
-function MomentsForm({formId}) {
+function MomentsForm({id}) {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        const momentForm = document.getElementById(formId)
+        const momentForm = document.getElementById(id)
       
         const token = localStorage.getItem("moments_token");
         const res = await fetch("/moment/", {
           method: "POST",
-          body: new FormData({momentForm}),
+          body: new FormData(momentForm),
           headers: {
             Authorization: `token ${token}`,
           },
@@ -19,7 +19,7 @@ function MomentsForm({formId}) {
         momentForm.reset()
       }
     return (
-        <form id={formId} onSubmit={onSubmit} >
+        <form id={id} onSubmit={onSubmit} >
         <input type="text" name="description" id="description"/>
         <input type="file" name="image" id="image"/>
         <button type="submit">Submit</button>

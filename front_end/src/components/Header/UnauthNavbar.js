@@ -2,6 +2,7 @@ import logo from './../../static/logo_with_text.svg'
 import { Link } from 'react-router-dom'
 import Button from './../Button/Button'
 import './navbar.css'
+
 const unauthNavbar = ({signUpModal, loginModal}) => {
     return (
         <nav className="navBar">
