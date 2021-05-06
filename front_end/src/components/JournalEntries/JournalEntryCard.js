@@ -11,7 +11,7 @@ const JournalEntryCard = ({id, onDelete, body, title, image, date, prompt}) => {
             <p>{date}</p>
             </div>
             <img src={image} alt="" className="entry-image"/>
-            {!body ? null : <Icon 
+            {!date ? null : <Icon 
             className="deckIcon"
             event={()=>onDelete(id)}
             />}
