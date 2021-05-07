@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework import viewsets, permissions
+from rest_framework import viewsets, permissions, filters
 
 from .serializers import EntrySerializer, EntryReadSerializer, MomentSerializer, PromptSerializer, UserSerializer
 from .models import Entry, Moment, Prompt
@@ -47,6 +47,9 @@ class EntryViewSet(viewsets.ModelViewSet):
         IsOwner
     ]
 
+    filter_backends = [filters.OrderingFilter]
+    ordering_fields = ["date"]
+
 
     def get_serializer_class(self):
         if self.request.method in ['GET']:
@@ -67,6 +70,9 @@ class MomentViewSet(viewsets.ModelViewSet):
     permission_classes = [
         IsOwner
     ]
+
+    filter_backends = [filters.OrderingFilter]
+    ordering_fields = ["date"]
 
     def get_queryset(self):
         user = self.request.user

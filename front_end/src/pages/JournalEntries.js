@@ -9,7 +9,7 @@ const JournalEntries = ({onDelete, invalidateToken, setJournalEntries, journalEn
     useEffect(() => {
         const token = localStorage.getItem("moments_token")
         const fetchEntries = async () => {
-        const res = await fetch('/entry/', {
+        const res = await fetch('/entry?ordering=date', {
             method: 'GET',
             headers: {
             'Content-type': 'application/json',

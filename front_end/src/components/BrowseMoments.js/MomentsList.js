@@ -15,7 +15,7 @@ const MomentsList = () => {
   useEffect(() => {
     async function getMoments() {
       const token = localStorage.getItem("moments_token");
-      const res = await fetch("/moment", {
+      const res = await fetch("/moment?ordering=date", {
         headers: {
           Authorization: `token ${token}`,
         },
