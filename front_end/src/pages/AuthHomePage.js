@@ -62,7 +62,7 @@ const AuthHomePage = ({invalidateToken, addEntry, onTitleChange, onBodyChange, t
             transform             : 'translate(-50%, -50%)',
             borderRadius: '2rem',
             width: '30rem',
-            height: '36rem'
+            'max-height': '80rem'
         }
     }
 // Guided Journalling Modal
@@ -76,7 +76,7 @@ const AuthHomePage = ({invalidateToken, addEntry, onTitleChange, onBodyChange, t
             transform             : 'translate(-50%, -50%)',
             borderRadius: '2rem',
             width: '30rem',
-            height: '44rem'
+            'max-height': '80rem'
         }
     }
 // Moments Modal
@@ -90,7 +90,7 @@ const AuthHomePage = ({invalidateToken, addEntry, onTitleChange, onBodyChange, t
             transform             : 'translate(-50%, -50%)',
             borderRadius: '2rem',
             width: '30rem',
-            height: '17rem'
+            'max-height': '80rem'
         }
     }
     ;

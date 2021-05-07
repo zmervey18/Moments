@@ -15,7 +15,11 @@ code {
 }
 
 .preview {
+  display: flex;
   max-width:200px;
+  margin: auto;
+  margin-bottom: 25px;
+  border-radius: 2rem;
 }
 
 /* Modals */

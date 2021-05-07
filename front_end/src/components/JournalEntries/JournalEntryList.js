@@ -19,9 +19,15 @@ const JournalEntryList = ({journalEntries, onDelete}) => {
                 prompt={entry.prompt}
                 />
                 </div>))
-                : (<JournalEntryCard
-                    title={"No entries to show"}
-                />) }
+                : (
+                <div className="no-entry-card-container">
+                    <div className="no-entry-card">
+                        <JournalEntryCard
+                            title={"No entries to show"}
+                        />
+                    </div>
+                </div>
+                ) }
             </div>
         </div>
     )
